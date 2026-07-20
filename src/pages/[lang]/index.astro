@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Hero from '../../components/Hero.astro';
+import QuickFacts from '../../components/QuickFacts.astro';
+import Intro from '../../components/Intro.astro';
+import History from '../../components/History.astro';
+import Gallery from '../../components/Gallery.astro';
+import Reviews from '../../components/Reviews.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import { getI18n } from '../../i18n/ui';
+import { languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { messages } = getI18n(Astro.url);
+---
+
+<BaseLayout title={messages.meta.title} description={messages.meta.description}>
+  <Hero />
+  <Breadcrumbs />
+  <QuickFacts />
+  <Intro />
+  <History />
+  <Gallery />
+  <Reviews />
+  <MapEmbed />
+</BaseLayout>

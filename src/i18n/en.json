@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) | Northern Thailand Geothermal Guide",
+    "description": "Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) is a natural geothermal hot spring and ecological site in Chiang Rai, Northern Thailand. Open daily 06:00–22:00. Rated 4.0 (11,232 reviews)."
+  },
+  "common": {
+    "changeLanguage": "Change language",
+    "toggleTheme": "Toggle dark mode",
+    "googleMaps": "Google Maps"
+  },
+  "header": {
+    "siteName": "Mae Kachan Hot Spring",
+    "home": "Home",
+    "visit": "Plan Your Visit",
+    "gallery": "Photos",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "badge": "Tourist Attraction · Natural Hot Spring",
+    "title": "Mae Kachan Hot Spring",
+    "subtitle": "清莱温泉 · น้ำพุร้อนแม่ขะจาน",
+    "desc": "A natural geothermal hot spring in Chiang Rai, Northern Thailand — wrapped in steam and tropical greenery. Soak your feet, boil a spring egg, and feel the warmth from the earth's core.",
+    "factRating": "Rating",
+    "factHours": "Hours",
+    "factAdmission": "Admission",
+    "ratingValue": "4.0 / 5",
+    "ratingCount": "11,232 reviews",
+    "hoursValue": "06:00 – 22:00",
+    "admissionValue": "≈ ฿40",
+    "ctaMaps": "View on Google Maps",
+    "mapsLabel": "View location on Google Maps"
+  },
+  "overview": {
+    "title": "Plan Your Visit",
+    "subtitle": "Key details to know before visiting Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน).",
+    "rating": "Rating",
+    "category": "Category",
+    "hours": "Opening Hours",
+    "address": "Address",
+    "plusCode": "Plus Code",
+    "admission": "Admission",
+    "categoryValue": "Nature Reserve / Natural Hot Spring",
+    "addressValue": "Moo 6, Pha Soet Phatthana Village, Doi Hang, Chiang Rai 57260, Thailand",
+    "plusCodeValue": "4F76+WV Mae Chedi Mai, Mae Suai District, Chiang Rai",
+    "admissionValue": "≈ ฿40 / person (Supports ecological maintenance)",
+    "hoursValue": "Daily 06:00 – 22:00"
+  },
+  "history": {
+    "title": "Geology & History",
+    "subtitle": "Discover the natural forces and cultural stories behind Mae Kachan Hot Spring.",
+    "geoTitle": "Geological Formation",
+    "geoText": "Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) is situated along a geological fault line in Northern Thailand. Its geothermal energy originates from deep underground, where cooling magma heats groundwater that has seeped into the earth's crust. Under pressure, this superheated water rises through the faults, creating natural springs with year-round temperatures of 80°C–90°C. This unique geology not only shapes the misty landscape but also enriches the surrounding ecosystem with vital minerals.",
+    "legendTitle": "History & Legend",
+    "legendText": "In local lore, this perpetually steaming land was once revered as a gift from nature's deities. For centuries, it served as an essential resting and healing stop for traveling caravans and merchants on long journeys. Today, standing as a non-profit nature education and eco-tourism landmark, Mae Kachan Hot Spring showcases the Earth's internal energy cycles while providing sustainable ecological support and conservation motivation for the local community."
+  },
+  "about": {
+    "title": "About Mae Kachan Hot Spring",
+    "text1": "Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) is a cluster of natural geothermal springs in Chiang Rai, Northern Thailand, where the water can reach about 80°C. The park features several steam and foot-soaking pools surrounded by tropical vegetation — a pure sanctuary for the local community and travelers to experience natural healing.",
+    "text2": "One of the signature experiences here is boiling eggs using natural geothermal heat: lower a bamboo basket of eggs into a vent and enjoy them in about 15 minutes. As an attraction focused on science education and ecology, it avoids excessive commercialization, preserving the original charm of its steam rooms, foot baths, and forest trails — perfect for a half-day of nature observation and relaxed exploration.",
+    "highlightsTitle": "Ecological Highlights",
+    "highlights": [
+      { "title": "Boil Eggs in the Spring", "text": "Lower a bamboo basket of eggs into the 80°C vent; about 15 minutes later they're perfectly cooked — a classic park ritual." },
+      { "title": "Foot-Soaking Pools", "text": "Multiple natural foot baths where warm water laps over your ankles, easing travel fatigue." },
+      { "title": "Steam Rooms", "text": "A natural sauna powered by geothermal steam — breathe warm, humid air." },
+      { "title": "Tropical Gardens", "text": "Shady trails and ponds framed by greenery, ideal for strolling, photos, and picnics." }
+    ]
+  },
+  "gallery": {
+    "title": "Photos",
+    "subtitle": "Capturing the steam, greenery, and spring eggs of Mae Kachan.",
+    "viewLocation": "View location on Google Maps"
+  },
+  "reviews": {
+    "title": "Visitor Reviews",
+    "subtitle": "Real feedback from visitors on Google Maps.",
+    "viewLocation": "View location on Google Maps",
+    "ratingSummary": "4.0 stars (11,232 reviews)",
+    "reviews": [
+      { "name": "Somchai T.", "rating": 5, "text": "Lovely setting, soaking my feet was so relaxing, and the spring eggs were delicious!" },
+      { "name": "Anna K.", "rating": 4, "text": "Facilities are a bit dated, but the natural atmosphere is impeccable — worth a visit." },
+      { "name": "Watchara P.", "rating": 4, "text": "Quiet and misty like a fairyland in the early morning; go early if you can." },
+      { "name": "Liu Mei", "rating": 5, "text": "Stopped by on a road trip to soak my feet — unexpectedly relaxing and great value." }
+    ]
+  },
+  "map": {
+    "title": "Location & Map",
+    "subtitle": "Mae Kachan Hot Spring sits in Chiang Rai near Highway 118 — a popular rest stop between Chiang Mai and Chiang Rai.",
+    "embedTitle": "Map Preview",
+    "note": "Click the button above to open full navigation in Google Maps."
+  },
+  "footer": {
+    "siteName": "Mae Kachan Hot Spring",
+    "tagline": "Guide to the natural geothermal hot spring in Chiang Rai, Northern Thailand · An independent travel-info site",
+    "googleMapsLabel": "View location on Google Maps",
+    "navTitle": "Navigation",
+    "home": "Home",
+    "visit": "Plan Your Visit",
+    "gallery": "Photos",
+    "reviews": "Reviews",
+    "map": "Map",
+    "copyright": "© 2026 Mae Kachan Hot Spring Guide. An independent travel-info compilation, not affiliated with any official body.",
+    "disclaimer": "For reference only. Hours and admission are subject to on-site and official announcements."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "region": "Northern Thailand",
+    "city": "Chiang Rai",
+    "current": "Mae Kachan Hot Spring"
+  }
+}

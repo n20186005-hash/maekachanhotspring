@@ -1,0 +1,31 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const a = messages.about;
+const highlights = a.highlights;
+---
+
+<section id="about" class="section-padding" style="background: var(--bg-tertiary);">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="section-title">{a.title}</h2>
+
+    <div class="space-y-4 mt-8 text-[0.98rem] leading-[1.85]" style="color: var(--text-secondary);">
+      <p>{a.text1}</p>
+      <p>{a.text2}</p>
+    </div>
+
+    <h3 class="font-display text-xl font-semibold mt-12 mb-5 text-center" style="color: var(--text-primary);">{a.highlightsTitle}</h3>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {highlights.map((h: any, i: number) => (
+        <div class="card">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-9 h-9 rounded-full flex items-center justify-center text-lg font-bold" style="background: var(--accent); color: #fff;">{i + 1}</span>
+            <h4 class="font-display text-lg font-semibold m-0" style="color: var(--text-primary);">{h.title}</h4>
+          </div>
+          <p class="text-sm leading-relaxed m-0" style="color: var(--text-secondary);">{h.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

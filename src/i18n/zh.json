@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "清莱温泉（น้ำพุร้อนแม่ขะจาน，Mae Kachan Hot Spring）| 泰国北部天然地热科普指南",
+    "description": "清莱温泉（Mae Kachan Hot Spring，น้ำพุร้อนแม่ขะจาน）位于泰国清莱府，是泰国北部著名的天然地热温泉与生态保护区。营业时间 06:00–22:00，评分 4.0（11,232 条评价）。"
+  },
+  "common": {
+    "changeLanguage": "切换语言",
+    "toggleTheme": "切换深色模式",
+    "googleMaps": "Google Maps"
+  },
+  "header": {
+    "siteName": "清莱温泉",
+    "home": "首页",
+    "visit": "实用信息",
+    "gallery": "照片",
+    "reviews": "评价",
+    "map": "地图"
+  },
+  "hero": {
+    "badge": "旅游胜地 · 天然温泉",
+    "title": "清莱温泉",
+    "subtitle": "Mae Kachan Hot Spring · น้ำพุร้อนแม่ขะจาน",
+    "desc": "泰国北部清莱府的天然地热温泉，蒸汽氤氲、绿意环绕。在这里可以泡脚放松、煮温泉蛋，感受来自地心的暖意。",
+    "factRating": "评分",
+    "factHours": "营业时间",
+    "factAdmission": "门票",
+    "ratingValue": "4.0 / 5",
+    "ratingCount": "11,232 条评价",
+    "hoursValue": "06:00 – 22:00",
+    "admissionValue": "约 ฿40",
+    "ctaMaps": "在 Google 地图上查看",
+    "mapsLabel": "在 Google 地图上查看位置"
+  },
+  "overview": {
+    "title": "实用信息",
+    "subtitle": "前往清莱温泉（น้ำพุร้อนแม่ขะจาน）前，先了解这些关键信息。",
+    "rating": "评分",
+    "category": "类别",
+    "hours": "营业时间",
+    "address": "地址",
+    "plusCode": "Plus Code",
+    "admission": "门票",
+    "categoryValue": "自然保护区 / 天然温泉",
+    "addressValue": "Moo 6, Pha Soet Phatthana Village, Doi Hang, Chiang Rai 57260, Thailand",
+    "plusCodeValue": "4F76+WV Mae Chedi Mai, Mae Suai District, Chiang Rai",
+    "admissionValue": "约 ฿40 / 人（支持非盈利生态维护）",
+    "hoursValue": "每日 06:00 – 22:00"
+  },
+  "history": {
+    "title": "地质成因与历史传说",
+    "subtitle": "探索清莱温泉背后的自然力量与人文故事。",
+    "geoTitle": "地质成因",
+    "geoText": "清莱温泉（น้ำพุร้อนแม่ขะจาน，Mae Kachan Hot Spring）坐落于泰国北部的地质断层带。这里的地热资源源于地下深处岩浆冷却释放的热量，加热了渗入地壳的地下水。受压后，高温地下水沿断层涌出地表，形成了常年高达 80°C–90°C 的天然温泉群。这种独特的地质结构，不仅塑造了云雾缭绕的自然景观，也为周边的生态系统提供了丰富的矿物质。",
+    "legendTitle": "历史与传说",
+    "legendText": "在当地的传说中，这片常年升腾着水汽的土地曾被视为自然神明的恩赐。几个世纪以来，这里是长途跋涉的马帮与商旅歇息、疗愈的必经之地。如今，作为一处非盈利性质的自然科普与生态旅游地标，清莱温泉不仅向公众展示了地球内部的能量循环，也为当地社区提供了可持续的生态依托与保护动力。"
+  },
+  "about": {
+    "title": "关于清莱温泉",
+    "text1": "清莱温泉（น้ำพุร้อนแม่ขะจาน）是泰国北部清莱府（Chiang Rai）一处天然地热温泉群，泉水温度可高达约 80°C。园区内设有多处蒸汽池与泡脚池，四周被热带植被环绕，是当地社区和旅行者感受自然疗愈的纯净去处。",
+    "text2": "这里的标志性体验之一，便是利用天然地热煮温泉蛋——将竹篮盛装的鸡蛋浸入泉眼，约 15 分钟即可享用。作为一处注重科普与生态的景点，这里未经过度商业开发，保留了蒸汽浴室、温泉足浴与林间步道的原始风貌，非常适合进行半日的自然观察与休闲探索。",
+    "highlightsTitle": "园区生态亮点",
+    "highlights": [
+      { "title": "温泉煮蛋", "text": "在 80°C 的泉眼中用竹篮煮蛋，约 15 分钟即熟，是园区经典玩法。" },
+      { "title": "泡脚池", "text": "多个天然足浴池，温水漫过脚踝，缓解旅途疲劳。" },
+      { "title": "蒸汽浴室", "text": "利用地热蒸汽的天然桑拿，呼吸温热湿润的空气。" },
+      { "title": "热带花园", "text": "绿荫步道与池塘环绕，适合散步、拍照与野餐。" }
+    ]
+  },
+  "gallery": {
+    "title": "照片",
+    "subtitle": "用镜头记录清莱温泉的蒸汽、绿意与温泉蛋。",
+    "viewLocation": "在 Google 地图上查看位置"
+  },
+  "reviews": {
+    "title": "访客评价",
+    "subtitle": "来自 Google 地图的真实访客反馈。",
+    "viewLocation": "在 Google 地图上查看位置",
+    "ratingSummary": "4.0 分（共 11,232 条评价）",
+    "reviews": [
+      { "name": "Somchai T.", "rating": 5, "text": "环境很棒，泡泡脚特别舒服，温泉蛋也很好吃！" },
+      { "name": "Anna K.", "rating": 4, "text": "设施稍微旧了点，但大自然的氛围无可挑剔，值得一来。" },
+      { "name": "Watchara P.", "rating": 4, "text": "早上人少很安静，蒸汽缭绕像仙境，建议早点去。" },
+      { "name": "Liu Mei", "rating": 5, "text": "自驾路过顺道来泡个脚，意外的放松，性价比高。" }
+    ]
+  },
+  "map": {
+    "title": "位置与地图",
+    "subtitle": "清莱温泉位于清莱府，靠近 118 号公路，是从清迈前往清莱途中的热门休息站。",
+    "embedTitle": "地图预览",
+    "note": "点击上方按钮在 Google 地图中查看完整导航。"
+  },
+  "footer": {
+    "siteName": "清莱温泉",
+    "tagline": "泰国北部清莱府天然地热温泉指南 · 独立旅行信息站点",
+    "googleMapsLabel": "在 Google 地图上查看位置",
+    "navTitle": "导航",
+    "home": "首页",
+    "visit": "实用信息",
+    "gallery": "照片",
+    "reviews": "评价",
+    "map": "地图",
+    "copyright": "© 2026 清莱温泉指南。本站点为独立旅行信息汇总，与任何官方机构无关。",
+    "disclaimer": "内容仅供参考，营业时间与门票请以现场及官方公告为准。"
+  },
+  "breadcrumb": {
+    "home": "首页",
+    "region": "泰国北部",
+    "city": "清莱府",
+    "current": "清莱温泉"
+  }
+}

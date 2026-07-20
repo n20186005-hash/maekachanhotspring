@@ -1,0 +1,34 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const o = messages.overview;
+const items = [
+  { icon: '⭐', label: o.rating, value: '4.0 / 5', sub: '11,232' },
+  { icon: '🏷️', label: o.category, value: o.categoryValue },
+  { icon: '🕕', label: o.hours, value: o.hoursValue },
+  { icon: '📍', label: o.address, value: o.addressValue },
+  { icon: '🧭', label: o.plusCode, value: o.plusCodeValue },
+  { icon: '🎟️', label: o.admission, value: o.admissionValue },
+];
+---
+
+<section id="overview" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{o.title}</h2>
+    <p class="section-subtitle">{o.subtitle}</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {items.map((it) => (
+        <div class="card flex items-start gap-3">
+          <span class="text-2xl leading-none mt-0.5">{it.icon}</span>
+          <div>
+            <p class="text-xs uppercase tracking-wider mb-1" style="color: var(--text-muted);">{it.label}</p>
+            <p class="font-semibold" style="color: var(--text-primary);">{it.value}</p>
+            {it.sub && <p class="text-sm" style="color: var(--text-secondary);">{it.sub}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

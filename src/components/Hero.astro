@@ -1,0 +1,57 @@
+---
+import { getI18n } from '../i18n/ui';
+import { siteConfig } from '../config';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const { messages } = getI18n(Astro.url);
+const hero = messages.hero;
+const overview = messages.overview;
+
+let heroImage = '';
+try {
+  const galleryDir = path.join(process.cwd(), 'public', 'gallery');
+  const files = fs.readdirSync(galleryDir).filter(file => file.endsWith('.jpg') || file.endsWith('.png') || file.endsWith('.webp'));
+  if (files.length > 0) {
+    heroImage = `/gallery/${files[0]}`;
+  }
+} catch (e) {
+  console.error('Error reading gallery directory:', e);
+}
+---
+
+<section
+  class="hero"
+  style={`background-image: url('${heroImage}'); background-color: var(--color-nature-800);`}
+>
+  <div class="hero-inner">
+    <span class="hero-badge animate-fade-in-up">{hero.badge}</span>
+    <h1 class="hero-title animate-fade-in-up animation-delay-100">{hero.title}</h1>
+    <p class="hero-subtitle animate-fade-in-up animation-delay-200">{hero.subtitle}</p>
+    <p class="hero-desc animate-fade-in-up animation-delay-200">{hero.desc}</p>
+
+    <div class="hero-facts animate-fade-in-up animation-delay-300">
+      <div class="hero-fact">
+        <span class="hero-fact-icon">⭐</span>
+        <span class="hero-fact-label">{hero.factRating}</span>
+        <span class="hero-fact-value">{hero.ratingValue}</span>
+        <span class="hero-fact-sub">{hero.ratingCount}</span>
+      </div>
+      <div class="hero-fact">
+        <span class="hero-fact-icon">🕕</span>
+        <span class="hero-fact-label">{hero.factHours}</span>
+        <span class="hero-fact-value">{hero.hoursValue}</span>
+      </div>
+      <div class="hero-fact">
+        <span class="hero-fact-icon">🎟️</span>
+        <span class="hero-fact-label">{hero.factAdmission}</span>
+        <span class="hero-fact-value">{hero.admissionValue}</span>
+      </div>
+    </div>
+
+    <!-- MAP LINK #1 (Hero) -->
+    <a class="btn-cta btn-cta-primary animate-fade-in-up animation-delay-400" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
+      📍 {hero.ctaMaps}
+    </a>
+  </div>
+</section>
