@@ -48,6 +48,15 @@ const navLinks = [
           <li><a href={`/${lang}/legal#cookies`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.cookies || 'Cookie Settings'}</a></li>
         </ul>
       </div>
+
+      <div>
+        <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.officialLinksTitle}</h4>
+        <ul class="space-y-2 text-sm">
+          {f.officialLinks && f.officialLinks.map((link: any) => (
+            <li><a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-70" style="color: var(--text-secondary);">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
     </div>
 
     <div class="mt-10 pt-6 border-t text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
