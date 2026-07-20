@@ -7,6 +7,7 @@ const f = messages.footer;
 
 const navLinks = [
   { href: `/${lang}`, label: f.home },
+  { href: `/${lang}/transport`, label: f.transport },
   { href: `/${lang}#overview`, label: f.visit },
   { href: `/${lang}#gallery`, label: f.gallery },
   { href: `/${lang}#reviews`, label: f.reviews },
@@ -21,7 +22,7 @@ const navLinks = [
       <p class="mission-text">{f.tagline}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
         <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.navTitle}</h4>
         <ul class="space-y-2 text-sm">
@@ -40,8 +41,12 @@ const navLinks = [
       </div>
 
       <div>
-        <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{messages.common.googleMaps}</h4>
-        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{messages.overview.addressValue}</p>
+        <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.legalTitle || 'Legal'}</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href={`/${lang}/legal#privacy`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.privacy || 'Privacy Policy'}</a></li>
+          <li><a href={`/${lang}/legal#terms`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.terms || 'Terms of Service'}</a></li>
+          <li><a href={`/${lang}/legal#cookies`} class="hover:opacity-70" style="color: var(--text-secondary);">{f.cookies || 'Cookie Settings'}</a></li>
+        </ul>
       </div>
     </div>
 

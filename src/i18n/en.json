@@ -11,15 +11,16 @@
   "header": {
     "siteName": "Mae Kachan Hot Spring",
     "home": "Home",
-    "visit": "Plan Your Visit",
-    "gallery": "Photos",
+    "visit": "Visit",
+    "gallery": "Gallery",
     "reviews": "Reviews",
-    "map": "Map"
+    "map": "Map",
+    "transport": "Transport"
   },
   "hero": {
     "badge": "Tourist Attraction · Natural Hot Spring",
     "title": "Mae Kachan Hot Spring",
-    "subtitle": "清莱温泉 · น้ำพุร้อนแม่ขะจาน",
+    "subtitle": "Mae Kachan Hot Spring",
     "desc": "A natural geothermal hot spring in Chiang Rai, Northern Thailand — wrapped in steam and tropical greenery. Soak your feet, boil a spring egg, and feel the warmth from the earth's core.",
     "factRating": "Rating",
     "factHours": "Hours",
@@ -91,16 +92,29 @@
   },
   "footer": {
     "siteName": "Mae Kachan Hot Spring",
-    "tagline": "Guide to the natural geothermal hot spring in Chiang Rai, Northern Thailand · An independent travel-info site",
-    "googleMapsLabel": "View location on Google Maps",
+    "tagline": "Independent guide to Northern Thailand's natural geothermal hot spring.",
+    "googleMapsLabel": "View on Google Maps",
     "navTitle": "Navigation",
     "home": "Home",
-    "visit": "Plan Your Visit",
-    "gallery": "Photos",
+    "visit": "Practical Info",
+    "gallery": "Gallery",
     "reviews": "Reviews",
     "map": "Map",
-    "copyright": "© 2026 Mae Kachan Hot Spring Guide. An independent travel-info compilation, not affiliated with any official body.",
-    "disclaimer": "For reference only. Hours and admission are subject to on-site and official announcements."
+    "transport": "Transport Guide",
+    "legalTitle": "Privacy & Terms",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "copyright": "This website is an independent non-profit tourist information project. We are not affiliated with any government agency or official organization.",
+    "disclaimer": "Data Source: The attraction information cited on this site is verified against public data from the Tourism Authority of Thailand (TAT) and Chiang Rai Province, and contains no commercial recommendations.",
+    "officialLinksTitle": "Official Links",
+    "officialLinks": [
+      { "label": "Tourism Authority of Thailand", "url": "https://www.tourismthailand.org/" },
+      { "label": "Department of National Parks", "url": "https://park.dnp.go.th/" },
+      { "label": "Chiang Rai Provincial Office", "url": "http://www.chiangrai.go.th/" },
+      { "label": "Ministry of Tourism and Sports", "url": "https://www.mots.go.th/" },
+      { "label": "Tourist Police Bureau", "url": "https://touristpolice.go.th/" }
+    ]
   },
   "breadcrumb": {
     "home": "Home",

@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+import { transportData } from '../../data/transport';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = getI18n(Astro.url);
+const data = transportData[lang] || transportData['zh'];
+
+const pageTitle = `${data.hero.title} | ${messages.meta.title}`;
+---
+
+<BaseLayout title={pageTitle} description={data.hero.subtitle} path="transport">
+  <!-- Hero Section -->
+  <section class="hero" style="background-color: var(--color-nature-800); min-height: 40vh; display: flex; align-items: center;">
+    <div class="hero-inner">
+      <h1 class="hero-title animate-fade-in-up">{data.hero.title}</h1>
+      <p class="hero-subtitle animate-fade-in-up animation-delay-100">{data.hero.subtitle}</p>
+    </div>
+  </section>
+
+  <Breadcrumbs customCurrent={data.hero.title} />
+
+  <div class="max-w-4xl mx-auto px-4 py-12 space-y-16 text-color">
+    <!-- Overview -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6 text-primary">{data.overview.title}</h2>
+      <div class="prose max-w-none text-lg leading-relaxed space-y-4">
+        {data.overview.content.split('\n\n').map((p: string) => <p>{p}</p>)}
+      </div>
+    </section>
+
+    <!-- Quick Tips -->
+    <section class="bg-surface p-8 rounded-2xl shadow-sm border border-border">
+      <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+        <span>💡</span> {data.quickTips.title}
+      </h3>
+      <ul class="space-y-3">
+        {data.quickTips.items.map((item: string) => (
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">•</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Transport Methods -->
+    <section>
+      <div class="grid gap-6 md:grid-cols-2">
+        {data.methods.map((method: any) => (
+          <div class="bg-surface p-6 rounded-2xl shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="text-4xl mb-4">{method.icon}</div>
+            <h3 class="text-xl font-bold mb-1">{method.title}</h3>
+            <p class="text-sm text-secondary mb-4">{method.subtitle}</p>
+            <p class="mb-4">{method.desc}</p>
+            
+            <div class="space-y-4">
+              <ul class="space-y-2 text-sm text-secondary">
+                {method.bullets.map((b: string) => (
+                  <li class="flex items-start gap-2">
+                    <span>-</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              {method.steps && method.steps.length > 0 && (
+                <div class="bg-background p-4 rounded-lg mt-4">
+                  <ol class="list-decimal list-inside space-y-1 text-sm font-medium">
+                    {method.steps.map((s: string) => <li>{s}</li>)}
+                  </ol>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Parking & Charging -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6 text-primary">{data.parking.title}</h2>
+      <p class="mb-6">{data.parking.desc}</p>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-border">
+              <th class="py-3 px-4 font-bold">{data.parking.tableHeaders[0]}</th>
+              <th class="py-3 px-4 font-bold">{data.parking.tableHeaders[1]}</th>
+              <th class="py-3 px-4 font-bold">{data.parking.tableHeaders[2]}</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {data.parking.options.map((opt: any) => (
+              <tr class="hover:bg-surface/50 transition-colors">
+                <td class="py-4 px-4 font-medium">{opt.name}</td>
+                <td class="py-4 px-4 text-secondary">{opt.distance}</td>
+                <td class="py-4 px-4 text-sm">{opt.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-secondary mt-4 p-4 bg-surface rounded-lg border border-border">{data.parking.note}</p>
+    </section>
+
+    <!-- Practical Tips & Best Time -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+          <span>✨</span> {data.practicalTips.title}
+        </h2>
+        <ul class="space-y-4">
+          {data.practicalTips.items.map((item: string) => (
+            <li class="flex items-start gap-3">
+              <span class="text-green-600 mt-1">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div class="bg-surface p-6 rounded-2xl border border-border">
+        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+          <span>⏰</span> {data.practicalTips.bestTime.title}
+        </h3>
+        <p class="text-secondary leading-relaxed">{data.practicalTips.bestTime.desc}</p>
+      </div>
+    </section>
+
+    <!-- Itinerary -->
+    <section>
+      <h2 class="text-3xl font-bold mb-4 text-primary">{data.itinerary.title}</h2>
+      <p class="mb-8 text-lg">{data.itinerary.desc}</p>
+      
+      <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+        {data.itinerary.steps.map((step: any, index: number) => (
+          <div class={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}>
+            <!-- Icon -->
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-primary text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
+              {step.id}
+            </div>
+            
+            <!-- Card -->
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-surface p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-2">
+                <h3 class="font-bold text-lg">{step.title}</h3>
+                <span class="text-sm text-primary font-medium">{step.subtitle}</span>
+              </div>
+              <p class="text-secondary mb-3">{step.desc}</p>
+              <p class="text-sm text-secondary bg-background p-2 rounded flex items-start gap-2">
+                <span>💡</span>
+                <span>{step.tip}</span>
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <p class="text-sm text-secondary mt-8 text-center italic">{data.itinerary.note}</p>
+    </section>
+
+    <!-- Safety -->
+    <section>
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-4 text-primary">{data.safety.title}</h2>
+        <p class="text-secondary max-w-2xl mx-auto">{data.safety.desc}</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        {data.safety.items.map((item: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border text-center">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="font-bold text-lg mb-1">{item.title}</h3>
+            <p class="text-sm text-primary font-medium mb-3">{item.subtitle}</p>
+            <p class="text-sm text-secondary">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Accommodation -->
+    <section>
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-primary">{data.accommodation.title}</h2>
+        <p class="text-lg">{data.accommodation.desc}</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        {data.accommodation.options.map((opt: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border">
+            <div class="text-4xl mb-4">{opt.icon}</div>
+            <h3 class="font-bold text-xl mb-1">{opt.title}</h3>
+            <p class="text-sm text-primary font-medium mb-4">{opt.subtitle}</p>
+            <p class="mb-4">{opt.desc}</p>
+            <p class="text-sm font-medium mb-4 bg-background p-3 rounded-lg">{opt.time}</p>
+            <ul class="space-y-2 text-sm text-secondary">
+              {opt.bullets.map((b: string) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-primary">✦</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      
+      <div class="bg-orange-50 dark:bg-orange-950/30 p-6 rounded-2xl border border-orange-200 dark:border-orange-900 mb-6">
+        <p class="text-orange-800 dark:text-orange-200 font-medium">⚠️ {data.accommodation.warning}</p>
+      </div>
+      
+      <div class="bg-surface p-6 rounded-2xl border border-border">
+        <h4 class="font-bold mb-4">{data.accommodation.tipsTitle}</h4>
+        <ul class="grid md:grid-cols-2 gap-4">
+          {data.accommodation.tips.map((tip: string) => (
+            <li class="flex items-start gap-2 text-sm">
+              <span class="text-green-600">✓</span>
+              <span>{tip}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Photography -->
+    <section>
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold mb-4 text-primary">{data.photography.title}</h2>
+        <p class="text-lg">{data.photography.desc}</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {data.photography.spots.map((spot: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="text-4xl">{spot.icon}</div>
+              <div>
+                <h3 class="font-bold text-lg">{spot.title}</h3>
+                <div class="flex items-center gap-2 text-sm mt-1">
+                  <span class="text-primary font-medium bg-primary/10 px-2 py-0.5 rounded">{spot.time}</span>
+                  <span class="text-secondary flex items-center gap-1">📍 {spot.location}</span>
+                </div>
+              </div>
+            </div>
+            <p class="mb-4 text-secondary">{spot.desc}</p>
+            <ul class="space-y-2 text-sm text-secondary">
+              {spot.bullets.map((b: string) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-primary">•</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-surface p-8 rounded-3xl border border-border">
+      <h2 class="text-3xl font-bold mb-8 text-primary text-center">{data.faq.title}</h2>
+      <div class="space-y-6 max-w-3xl mx-auto">
+        {data.faq.items.map((item: any) => (
+          <details class="group bg-background rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+              <span>{item.q}</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </summary>
+            <div class="text-secondary p-5 pt-0 leading-relaxed">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="text-center">
+      <h2 class="text-2xl font-bold mb-8 text-primary">{data.resources.title}</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        {data.resources.items.map((item: any) => (
+          <a href="#" class="inline-flex items-center gap-3 bg-surface hover:bg-primary hover:text-white transition-colors p-4 rounded-xl border border-border group">
+            <span class="text-2xl group-hover:scale-110 transition-transform">{item.icon}</span>
+            <div class="text-left">
+              <div class="font-bold text-sm">{item.title}</div>
+              <div class="text-xs opacity-80">{item.desc}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

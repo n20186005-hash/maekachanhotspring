@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+import { legalData } from '../../data/legal';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = getI18n(Astro.url);
+const data = legalData[lang] || legalData['zh'];
+
+const pageTitle = `${messages.footer.privacy} & ${messages.footer.terms} | ${messages.meta.title}`;
+---
+
+<BaseLayout title={pageTitle} description={messages.footer.privacy} path="legal">
+  <div class="max-w-4xl mx-auto px-4 py-12 space-y-16 text-color mt-16">
+    <Breadcrumbs customCurrent="Legal" />
+
+    <!-- Privacy Policy -->
+    <section id="privacy" class="scroll-mt-24">
+      <div class="border-b border-border pb-6 mb-8">
+        <h1 class="text-4xl font-bold mb-4 text-primary">{data.privacy.title}</h1>
+        <p class="text-secondary">{data.privacy.lastUpdated}</p>
+      </div>
+      
+      <div class="space-y-8">
+        {data.privacy.sections.map((section: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border">
+            <h2 class="text-2xl font-bold mb-4">{section.title}</h2>
+            <p class="mb-4 leading-relaxed">{section.content}</p>
+            {section.list && (
+              <ul class="space-y-2 ml-4">
+                {section.list.map((item: string) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Terms of Service -->
+    <section id="terms" class="scroll-mt-24">
+      <div class="border-b border-border pb-6 mb-8">
+        <h1 class="text-4xl font-bold mb-4 text-primary">{data.terms.title}</h1>
+        <p class="text-secondary">{data.terms.lastUpdated}</p>
+      </div>
+      
+      <p class="text-lg mb-8">{data.terms.intro}</p>
+      
+      <div class="space-y-8">
+        {data.terms.sections.map((section: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border">
+            <h2 class="text-2xl font-bold mb-4">{section.title}</h2>
+            <p class="leading-relaxed">{section.content}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Cookie Settings -->
+    <section id="cookies" class="scroll-mt-24">
+      <div class="border-b border-border pb-6 mb-8">
+        <h1 class="text-4xl font-bold mb-4 text-primary">{data.cookies.title}</h1>
+        <p class="text-secondary">{data.cookies.lastUpdated}</p>
+      </div>
+      
+      <p class="text-lg mb-8">{data.cookies.intro}</p>
+      
+      <div class="space-y-6 mb-8">
+        {data.cookies.categories.map((cat: any) => (
+          <div class="bg-surface p-6 rounded-2xl border border-border">
+            <div class="mb-4">
+              <h2 class="text-xl font-bold mb-2">{cat.title}</h2>
+              <p class="text-secondary text-sm">{cat.desc}</p>
+            </div>
+            
+            <div class="space-y-4 mt-6">
+              {cat.items.map((item: any) => (
+                <div class="flex items-center justify-between p-4 bg-background rounded-xl border border-border">
+                  <div>
+                    <h3 class="font-semibold">{item.name}</h3>
+                    {item.desc && <p class="text-sm text-secondary mt-1">{item.desc}</p>}
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class={`text-sm font-medium ${item.active ? 'text-green-600' : 'text-secondary'}`}>
+                      {item.status}
+                    </span>
+                    <div class={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${item.active ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-600'} ${item.locked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
+                      <span class={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${item.active ? 'translate-x-6' : 'translate-x-1'}`} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="flex flex-wrap gap-4 items-center justify-between bg-surface p-6 rounded-2xl border border-border">
+        <p class="text-sm text-secondary flex-1 min-w-[200px]">{data.cookies.note}</p>
+        <div class="flex gap-3">
+          <button class="px-6 py-2 rounded-lg border border-border hover:bg-black/5 dark:hover:bg-white/5 transition-colors font-medium">
+            {data.cookies.actions.rejectAll}
+          </button>
+          <button class="px-6 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition-opacity font-medium">
+            {data.cookies.actions.save}
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
