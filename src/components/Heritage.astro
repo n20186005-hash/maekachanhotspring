@@ -1,0 +1,38 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+
+const { lang } = getI18n(Astro.url);
+const s = getGuide(lang).heritage;
+---
+
+<section id="heritage" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <p class="heritage-intro">{s.intro}</p>
+
+    <div class="heritage-chapters">
+      {s.chapters.map((chapter, index) => (
+        <article class="heritage-chapter">
+          <h3 class="heritage-chapter-title">
+            <span class="heritage-chapter-index" aria-hidden="true">{index + 1}</span>
+            {chapter.title}
+          </h3>
+          <p class="heritage-chapter-text">{chapter.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="heritage-timeline-title">{s.timelineTitle}</h3>
+    <ol class="heritage-timeline">
+      {s.timeline.map((entry) => (
+        <li class="heritage-entry">
+          <span class="heritage-period">{entry.period}</span>
+          <span class="heritage-event">{entry.text}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

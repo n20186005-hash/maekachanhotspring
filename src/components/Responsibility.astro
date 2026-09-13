@@ -1,0 +1,29 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+
+const { lang } = getI18n(Astro.url);
+const s = getGuide(lang).responsibility;
+---
+
+<section id="responsibility" class="section-padding" style="background: var(--bg-secondary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="duty-grid">
+      {s.items.map((item, index) => (
+        <article class="duty-card">
+          <div class="duty-head">
+            <span class="duty-icon" aria-hidden="true">{item.icon}</span>
+            <h3 class="duty-title">
+              <span class="duty-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              {item.title}
+            </h3>
+          </div>
+          <p class="duty-text">{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

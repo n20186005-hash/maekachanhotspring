@@ -1,0 +1,31 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+
+const { lang } = getI18n(Astro.url);
+const s = getGuide(lang).services;
+---
+
+<section id="services" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="service-grid">
+      {s.items.map((item) => (
+        <article class="service-card">
+          <div class="service-head">
+            <span class="service-icon" aria-hidden="true">{item.icon}</span>
+            <div>
+              <h3 class="service-name">{item.name}</h3>
+              <p class="service-status">{item.status}</p>
+            </div>
+          </div>
+          <p class="service-detail">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="service-note" role="note">⚖️ {s.note}</p>
+  </div>
+</section>

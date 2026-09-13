@@ -5,22 +5,26 @@ const { lang, messages } = getI18n(Astro.url);
 const h = messages.header;
 const common = messages.common;
 
+// Pages are directory-format, so links always end in a slash — otherwise the
+// host answers with a redirect hop before the real page loads.
 const pageSeg = Astro.url.pathname.split('/').filter(Boolean).slice(1).join('/');
-const switchTo = (l: string) => (pageSeg ? `/${l}/${pageSeg}` : `/${l}`);
+const switchTo = (l: string) => (pageSeg ? `/${l}/${pageSeg}/` : `/${l}/`);
 
 const navLinks = [
-  { href: `/${lang}`, label: h.home },
-  { href: `/${lang}/transport`, label: h.transport },
-  { href: `/${lang}#overview`, label: h.visit },
-  { href: `/${lang}#gallery`, label: h.gallery },
-  { href: `/${lang}#reviews`, label: h.reviews },
-  { href: `/${lang}#map`, label: h.map },
+  { href: `/${lang}/`, label: h.home },
+  { href: `/${lang}/#weather`, label: h.weather },
+  { href: `/${lang}/#services`, label: h.services },
+  { href: `/${lang}/transport/`, label: h.transport },
+  { href: `/${lang}/#overview`, label: h.visit },
+  { href: `/${lang}/#gallery`, label: h.gallery },
+  { href: `/${lang}/#reviews`, label: h.reviews },
+  { href: `/${lang}/#map`, label: h.map },
 ];
 ---
 
 <header class="sticky top-0 z-50 backdrop-blur" style="background: color-mix(in srgb, var(--bg-primary) 85%, transparent); border-bottom: 1px solid var(--border-color);">
   <div class="max-w-6xl mx-auto px-4 min-h-16 py-3 flex items-center justify-between gap-3 md:gap-4">
-    <a href={`/${lang}`} class="font-display text-base sm:text-lg font-semibold leading-tight max-w-[11rem] sm:max-w-none" style="color: var(--text-primary);">{h.siteName}</a>
+    <a href={`/${lang}/`} class="font-display text-base sm:text-lg font-semibold leading-tight max-w-[11rem] sm:max-w-none" style="color: var(--text-primary);">{h.siteName}</a>
 
     <nav class="hidden md:flex items-center gap-4 text-sm lg:gap-5" style="color: var(--text-secondary);">
       {navLinks.map((n) => (

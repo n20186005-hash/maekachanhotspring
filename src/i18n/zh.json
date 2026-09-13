@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "清莱温泉（น้ำพุร้อนแม่ขะจาน，Mae Kachan Hot Spring）| 泰国北部天然地热科普指南",
-    "description": "清莱温泉（Mae Kachan Hot Spring，น้ำพุร้อนแม่ขะจาน）位于泰国清莱府，是泰国北部著名的天然地热温泉与生态保护区。营业时间 06:00–22:00，评分 4.0（11,232 条评价）。"
+    "title": "清莱温泉 Mae Kachan Hot Spring｜清迈—清莱途中站·煮温泉蛋·足浴·照片",
+    "description": "清迈到清莱途中的天然温泉休息站。煮温泉蛋、泡足浴、看实景照片，营业时间 06:00–22:00，附交通、停车与游玩攻略。",
+    "transportTitle": "清莱温泉交通指南：清迈到清莱自驾、巴士与包车"
   },
   "common": {
     "changeLanguage": "切换语言",
@@ -12,21 +13,37 @@
     "siteName": "清莱温泉",
     "home": "首页",
     "visit": "实用信息",
+    "weather": "天气",
+    "services": "服务设施",
     "gallery": "照片",
     "reviews": "评价",
     "map": "地图",
     "transport": "交通"
   },
+  "weather": {
+    "conditions": {
+      "clear": "晴",
+      "mainlyClear": "晴间多云",
+      "partlyCloudy": "多云",
+      "overcast": "阴",
+      "fog": "雾",
+      "drizzle": "小雨",
+      "rain": "雨",
+      "showers": "阵雨",
+      "snow": "雪",
+      "thunderstorm": "雷雨"
+    }
+  },
   "hero": {
     "badge": "旅游胜地 · 天然温泉",
-    "title": "清莱温泉",
-    "subtitle": "Mae Kachan Hot Spring · น้ำพุร้อนแม่ขะจาน",
+    "title": "清莱温泉（Mae Kachan Hot Spring）",
+    "subtitle": "Mae Kachan Hot Spring · น้ำพุร้อนแม่ขะจาน · Chiang Rai, Thailand",
     "desc": "泰国北部清莱府的天然地热温泉，蒸汽氤氲、绿意环绕。在这里可以泡脚放松、煮温泉蛋，感受来自地心的暖意。",
     "factRating": "评分",
     "factHours": "营业时间",
     "factAdmission": "门票",
     "ratingValue": "4.0 / 5",
-    "ratingCount": "11,232 条评价",
+    "ratingCount": "11,345 条评价",
     "hoursValue": "06:00 – 22:00",
     "admissionValue": "约 ฿40",
     "ctaMaps": "在 Google 地图上查看",
@@ -43,12 +60,12 @@
     "admission": "门票",
     "categoryValue": "自然保护区 / 天然温泉",
     "addressValue": "Moo 6, Pha Soet Phatthana Village, Doi Hang, Chiang Rai 57260, Thailand",
-    "plusCodeValue": "4F76+WV Mae Chedi Mai, Mae Suai District, Chiang Rai",
+    "plusCodeValue": "4F76+WV Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai",
     "admissionValue": "约 ฿40 / 人（支持非盈利生态维护）",
     "hoursValue": "每日 06:00 – 22:00"
   },
   "history": {
-    "title": "地质成因与历史传说",
+    "title": "清莱温泉（Mae Kachan Hot Spring）的历史与意义",
     "subtitle": "探索清莱温泉背后的自然力量与人文故事。",
     "geoTitle": "地质成因",
     "geoText": "清莱温泉（น้ำพุร้อนแม่ขะจาน，Mae Kachan Hot Spring）坐落于泰国北部的地质断层带。这里的地热资源源于地下深处岩浆冷却释放的热量，加热了渗入地壳的地下水。受压后，高温地下水沿断层涌出地表，形成了常年高达 80°C–90°C 的天然温泉群。这种独特的地质结构，不仅塑造了云雾缭绕的自然景观，也为周边的生态系统提供了丰富的矿物质。",
@@ -76,7 +93,8 @@
     "title": "访客评价",
     "subtitle": "来自 Google 地图的真实访客反馈。",
     "viewLocation": "在 Google 地图上查看位置",
-    "ratingSummary": "4.0 分（共 11,232 条评价）",
+    "ratingSummary": "4.0 分（共 11,345 条评价）",
+    "ratingSource": "数据来源：Google 地图评分，最近同步于 2026 年 9 月。",
     "reviews": [
       { "name": "Somchai T.", "rating": 5, "text": "环境很棒，泡泡脚特别舒服，温泉蛋也很好吃！" },
       { "name": "Anna K.", "rating": 4, "text": "设施稍微旧了点，但大自然的氛围无可挑剔，值得一来。" },
@@ -85,10 +103,55 @@
     ]
   },
   "map": {
-    "title": "位置与地图",
+    "title": "位置与交通：如何前往清莱府的 Mae Kachan Hot Spring",
     "subtitle": "清莱温泉位于清莱府，靠近 118 号公路，是从清迈前往清莱途中的热门休息站。",
     "embedTitle": "地图预览",
     "note": "点击上方按钮在 Google 地图中查看完整导航。"
+  },
+  "landmarks": {
+    "title": "清莱温泉周边地标与景点",
+    "subtitle": "清莱温泉位于清迈—清莱 118 号公路 64–65 公里处，可与以下周边景点组合游览。",
+    "intro": "游览清莱温泉（Mae Kachan Hot Spring）时，还可顺道探访周边的历史地标与景点，例如白庙（Wat Rong Khun）与美苏艾水坝（Mae Suai Dam）。",
+    "locationLabel": "位置与交通：如何前往清莱府的 Mae Kachan Hot Spring",
+    "distanceLabel": "距温泉约车程",
+    "items": [
+      { "name": "白庙 Wat Rong Khun（龙坤寺）", "local": "วัดร่องขุ่น", "distance": "约 50 分钟（北行约 50 公里）", "text": "泰国最著名的当代寺庙，由艺术家 Chalermchai Kositpipat 打造的白色镜面艺术地标。" },
+      { "name": "美苏艾水坝 Mae Suai Dam", "local": "เขื่อนแม่สรวย", "distance": "约 35 分钟（南行约 35 公里）", "text": "风景秀丽的水库，环湖公路与浮筏民宿，是返回清迈途中的宁静一站。" },
+      { "name": "坤猜国家公园 Khun Chae National Park", "local": "อุทยานแห่งชาติขุนแจ", "distance": "约 55 分钟", "text": "山林秘境，拥有 Doi Lang Ka 观景台、瀑布与山地部落村落。" },
+      { "name": "象山 Doi Chang", "local": "ดอยช้าง", "distance": "约 1 小时 10 分钟", "text": "高地咖啡产区，以阿拉比卡咖啡园、山间咖啡馆与凉爽气候景观闻名。" }
+    ]
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "关于清莱温泉（Mae Kachan Hot Spring）的快速解答。",
+    "items": [
+      { "q": "清莱温泉（Mae Kachan Hot Spring）在哪里？", "a": "清莱温泉位于泰国清莱府温帕抛县湄皆迈区（Mae Chedi Mai, Wiang Pa Pao District），Plus Code 为 4F76+WV，坐落于清迈—清莱 118 号公路沿线。" },
+      { "q": "清莱温泉需要门票吗？", "a": "公共园区免费开放，全年可入内。私人矿物浴、温泉煮蛋套装等增值服务需另行付费（约 ฿40）。" },
+      { "q": "清莱温泉的营业时间是？", "a": "清莱温泉全年每日 06:00–22:00 开放。" },
+      { "q": "可以在清莱温泉煮温泉蛋吗？", "a": "可以。利用天然地热泉眼煮蛋是这里的标志性体验——将竹篮盛装的鸡蛋浸入泉眼，约 15 分钟即可煮熟。" },
+      { "q": "清莱温泉的水温有多高？", "a": "泉眼水温约在 80°C–90°C 之间，因此温泉池主要用于观赏、泡脚与煮蛋，不适合全身浸泡。" },
+      { "q": "从清迈或清莱怎么去清莱温泉？", "a": "温泉位于 118 号公路（Route 118）沿线，自驾从清迈出发约 1.5 小时、从清莱出发约 1.5 小时，是两城之间自驾行程的热门休息站。" },
+      { "q": "清莱温泉有哪些设施？", "a": "园区设有停车场、洗手间、泡脚池、天然蒸汽浴室、餐厅与咖啡馆、OTOP 特产商店以及游客咨询点。" },
+      { "q": "清莱温泉适合带孩子吗？", "a": "适合，是一处适合家庭的公路休息型景点。由于泉眼水温高达 80°C–90°C，请务必看护好儿童，避免靠近泉眼。" }
+    ]
+  },
+  "sources": {
+    "title": "资料来源与参考",
+    "subtitle": "本站为独立信息站点，所有数据均引用可公开查证的来源，便于读者自行核实。",
+    "updatedLabel": "评分与评价数据同步时间",
+    "updated": "2026 年 9 月",
+    "sourceNote": "评分与评价数量同步自 Mae Kachan Hot Spring 的 Google 地图官方条目。",
+    "entriesTitle": "参考来源",
+    "entries": [
+      { "label": "Google 地图 — Mae Kachan Hot Spring（评分与评价）", "url": "https://maps.app.goo.gl/2yLL4BbfEtDcbof77" },
+      { "label": "泰国国家旅游局（TAT）", "url": "https://www.tourismthailand.org/" },
+      { "label": "清莱数字旅游目录（Chiang Rai Digital Tourism）", "url": "https://www.chiangraiguide.com/categories/attractions/mae-ka-chan-hot-springs/" },
+      { "label": "泰国国家公园局（DNP）", "url": "https://park.dnp.go.th/" },
+      { "label": "清莱府官方网站", "url": "http://www.chiangrai.go.th/" }
+    ],
+    "officialText": "如需官方最新动态与区域旅游信息，请访问",
+    "officialLinkLabel": "泰国 / 清莱府官方旅游门户",
+    "photoRights": "图片产权：本网站所展示的所有图片产权及版权均归原摄影者所有。"
   },
   "footer": {
     "siteName": "清莱温泉",
@@ -107,6 +170,8 @@
     "cookies": "Cookie 设置",
     "copyright": "本网站是一个独立的非营利游客信息项目。我们与任何政府机构或官方组织均无隶属关系。",
     "disclaimer": "数据源 · Data Source： 本站引用的景点信息，均对照考证自泰国旅游局（TAT）与清莱府公开资料，不含任何商业性推荐。",
+    "imageRights": "图片产权：本网站所展示的所有图片产权及版权均归原摄影者所有。",
+    "imageRightsTitle": "图片产权",
     "officialLinksTitle": "官方友情链接",
     "officialLinks": [
       { "label": "泰国国家旅游局 (TAT)", "url": "https://www.tourismthailand.org/" },

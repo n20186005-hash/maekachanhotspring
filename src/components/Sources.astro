@@ -1,0 +1,46 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction, siteConfig } from '../config';
+
+const { messages } = getI18n(Astro.url);
+const s = messages.sources;
+const entries = s.entries;
+---
+
+<section id="sources" class="section-padding" style="background: var(--bg-tertiary);">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="card mb-6">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="text-xs uppercase tracking-wider" style="color: var(--text-muted);">{s.updatedLabel}</span>
+        <span class="tag">{s.updated}</span>
+      </div>
+      <p class="text-sm leading-relaxed mt-3 mb-0" style="color: var(--text-secondary);">
+        {s.sourceNote}
+      </p>
+      <p class="text-sm mt-2 mb-0">
+        <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="footer-maps-link">
+          {attraction.ratingSourceName} → {attraction.ratingValue} / 5 · {attraction.reviewCount}
+        </a>
+      </p>
+    </div>
+
+    <h3 class="font-display text-lg font-semibold mb-3" style="color: var(--text-primary);">{s.entriesTitle}</h3>
+    <ul class="space-y-2 text-sm">
+      {entries.map((e: any) => (
+        <li class="flex items-start gap-2">
+          <span style="color: var(--accent);" class="mt-0.5">•</span>
+          <a href={e.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-70" style="color: var(--text-secondary); text-decoration: underline; text-underline-offset: 3px;">
+            {e.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <p class="text-xs leading-relaxed mt-8 pt-6 border-t" style="border-color: var(--border-color); color: var(--text-muted);">
+      {s.photoRights}
+    </p>
+  </div>
+</section>

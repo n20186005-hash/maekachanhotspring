@@ -1,22 +1,20 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { siteConfig } from '../config';
-import fs from 'node:fs';
-import path from 'node:path';
+import { siteConfig, attraction } from '../config';
+import photos from '../data/gallery.json';
 
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
 
-// Dynamically read images from public/gallery
-const galleryDir = path.join(process.cwd(), 'public', 'gallery');
-let images: string[] = [];
-try {
-  images = fs.readdirSync(galleryDir)
-    .filter(file => file.endsWith('.jpg') || file.endsWith('.png') || file.endsWith('.webp'))
-    .map(file => `/gallery/${file}`);
-} catch (e) {
-  console.error('Error reading gallery directory:', e);
-}
+// Every photograph ships as a 640px WebP + JPEG thumbnail for the grid and a
+// 1600px WebP + JPEG master for the lightbox. Dimensions come from the
+// generated manifest so the browser can reserve the right box straight away.
+const photoAlt = (i: number) =>
+  `${attraction.fullName} in ${attraction.city}, ${attraction.country} — photo ${i + 1}`;
+
+// 1x1 transparent GIF used until the lightbox opens, so no request is made for
+// an empty `src`.
+const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 ---
 
 <section id="gallery" class="section-padding" style="background: var(--bg-primary);">
@@ -25,14 +23,33 @@ try {
     <p class="section-subtitle">{g.subtitle}</p>
 
     <div class="gallery-grid" id="gallery-grid">
-      {images.map((src) => (
-        <button type="button" class="gallery-item" data-src={src} aria-label={g.title}>
-          <img src={src} alt={g.title} loading="lazy" />
+      {photos.map((photo, i) => (
+        <button
+          type="button"
+          class="gallery-item"
+          data-webp={`/gallery/${photo.base}.webp`}
+          data-jpg={`/gallery/${photo.base}.jpg`}
+          data-alt={photoAlt(i)}
+          aria-label={photoAlt(i)}
+        >
+          <picture>
+            <source type="image/webp" srcset={`/gallery/thumbs/${photo.base}.webp`} />
+            <img
+              src={`/gallery/thumbs/${photo.base}.jpg`}
+              alt={photoAlt(i)}
+              width={photo.thumb.width}
+              height={photo.thumb.height}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </picture>
         </button>
       ))}
     </div>
 
-    <div class="text-center mt-8">
+    <p class="text-center text-xs mt-4" style="color: var(--text-muted);">{messages.sources.photoRights}</p>
+
+    <div class="text-center mt-6">
       <!-- MAP LINK #2 (Gallery) -->
       <a class="btn-cta btn-cta-primary" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
         📍 {g.viewLocation}
@@ -46,7 +63,10 @@ try {
   <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
   <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
   <figure class="lightbox-figure">
-    <img id="lightbox-img" src="" alt="" />
+    <picture>
+      <source id="lightbox-webp" type="image/webp" />
+      <img id="lightbox-img" src={PLACEHOLDER} alt="" />
+    </picture>
     <figcaption id="lightbox-caption">{g.title}</figcaption>
   </figure>
   <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
@@ -59,14 +79,22 @@ try {
     var items = Array.from(grid.querySelectorAll('.gallery-item'));
     var lb = document.getElementById('lightbox');
     var lbImg = document.getElementById('lightbox-img');
+    var lbWebp = document.getElementById('lightbox-webp');
     var lbCap = document.getElementById('lightbox-caption');
     var caption = lbCap ? lbCap.textContent : '';
     var current = 0;
 
     function open(idx) {
       current = idx;
-      var src = items[idx].getAttribute('data-src');
-      if (lbImg) lbImg.src = src || '';
+      var el = items[idx];
+      var jpg = el.getAttribute('data-jpg');
+      var webp = el.getAttribute('data-webp');
+      var alt = el.getAttribute('data-alt') || caption;
+      if (lbWebp) lbWebp.srcset = webp || '';
+      if (lbImg) {
+        lbImg.src = jpg || '';
+        lbImg.alt = alt;
+      }
       if (lb) lb.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }

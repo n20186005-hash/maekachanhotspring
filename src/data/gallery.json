@@ -1,0 +1,206 @@
+[
+  {
+    "base": "mae-kachan-hot-spring-1",
+    "full": {
+      "width": 1600,
+      "height": 1600
+    },
+    "thumb": {
+      "width": 640,
+      "height": 640
+    },
+    "bytes": {
+      "fullJpg": 353915,
+      "fullWebp": 222846,
+      "thumbJpg": 56784,
+      "thumbWebp": 44670
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-2",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 458742,
+      "fullWebp": 392950,
+      "thumbJpg": 66485,
+      "thumbWebp": 67784
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-3",
+    "full": {
+      "width": 1600,
+      "height": 900
+    },
+    "thumb": {
+      "width": 640,
+      "height": 360
+    },
+    "bytes": {
+      "fullJpg": 241609,
+      "fullWebp": 182630,
+      "thumbJpg": 40203,
+      "thumbWebp": 33858
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-4",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 468602,
+      "fullWebp": 420044,
+      "thumbJpg": 74156,
+      "thumbWebp": 72152
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-5",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 410150,
+      "fullWebp": 355612,
+      "thumbJpg": 64641,
+      "thumbWebp": 59432
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-6",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 295060,
+      "fullWebp": 229412,
+      "thumbJpg": 44565,
+      "thumbWebp": 35608
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-7",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 504231,
+      "fullWebp": 457318,
+      "thumbJpg": 78342,
+      "thumbWebp": 78318
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-8",
+    "full": {
+      "width": 1600,
+      "height": 1200
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 424506,
+      "fullWebp": 380258,
+      "thumbJpg": 56686,
+      "thumbWebp": 51128
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-9",
+    "full": {
+      "width": 1600,
+      "height": 2133
+    },
+    "thumb": {
+      "width": 640,
+      "height": 853
+    },
+    "bytes": {
+      "fullJpg": 510735,
+      "fullWebp": 389682,
+      "thumbJpg": 85295,
+      "thumbWebp": 72212
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-10",
+    "full": {
+      "width": 1600,
+      "height": 1199
+    },
+    "thumb": {
+      "width": 640,
+      "height": 480
+    },
+    "bytes": {
+      "fullJpg": 271140,
+      "fullWebp": 182312,
+      "thumbJpg": 58324,
+      "thumbWebp": 50050
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-11",
+    "full": {
+      "width": 1600,
+      "height": 2133
+    },
+    "thumb": {
+      "width": 640,
+      "height": 853
+    },
+    "bytes": {
+      "fullJpg": 469210,
+      "fullWebp": 325072,
+      "thumbJpg": 89159,
+      "thumbWebp": 72142
+    }
+  },
+  {
+    "base": "mae-kachan-hot-spring-12",
+    "full": {
+      "width": 1600,
+      "height": 900
+    },
+    "thumb": {
+      "width": 640,
+      "height": 360
+    },
+    "bytes": {
+      "fullJpg": 382597,
+      "fullWebp": 371982,
+      "thumbJpg": 53856,
+      "thumbWebp": 55080
+    }
+  }
+]

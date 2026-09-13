@@ -1,6 +1,6 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { siteConfig } from '../config';
+import { siteConfig, attraction } from '../config';
 
 const { messages } = getI18n(Astro.url);
 const r = messages.reviews;
@@ -20,11 +20,18 @@ function stars(n: number) {
     <h2 class="section-title">{r.title}</h2>
     <p class="section-subtitle">{r.subtitle}</p>
 
-    <div class="flex items-center justify-center gap-2 mb-8">
-      <span class="text-2xl font-bold" style="color: var(--accent);">4.0</span>
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <span class="text-2xl font-bold" style="color: var(--accent);">{attraction.ratingValue}</span>
       <span class="text-lg" set:html={stars(4)}></span>
       <span class="text-sm" style="color: var(--text-secondary);">{r.ratingSummary}</span>
     </div>
+
+    <!-- Rating source attribution -->
+    <p class="text-center text-xs mb-8" style="color: var(--text-muted);">
+      <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:opacity-70" style="color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px;">
+        {r.ratingSource}
+      </a>
+    </p>
 
     <div class="grid sm:grid-cols-2 gap-4">
       {reviews.map((rev: any) => (

@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน)",
+  "short_name": "Mae Kachan",
+  "description": "Visitor guide to Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) in Chiang Rai, Thailand — location, opening hours, photos, reviews and travel tips.",
+  "start_url": "/th",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#faf8f4",
+  "theme_color": "#142d1c",
+  "lang": "th",
+  "dir": "ltr",
+  "categories": ["travel", "navigation", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Photos", "short_name": "Photos", "url": "/th#gallery", "description": "Photo gallery" },
+    { "name": "Map", "short_name": "Map", "url": "/th#map", "description": "Location and directions" },
+    { "name": "Reviews", "short_name": "Reviews", "url": "/th#reviews", "description": "Visitor reviews" }
+  ]
+}

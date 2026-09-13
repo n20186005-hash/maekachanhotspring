@@ -4,27 +4,70 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Hero from '../../components/Hero.astro';
 import QuickFacts from '../../components/QuickFacts.astro';
 import Intro from '../../components/Intro.astro';
+import Weather from '../../components/Weather.astro';
+import Itineraries from '../../components/Itineraries.astro';
+import VisitorProfiles from '../../components/VisitorProfiles.astro';
+import Seasons from '../../components/Seasons.astro';
+import VisitorServices from '../../components/VisitorServices.astro';
 import History from '../../components/History.astro';
+import Heritage from '../../components/Heritage.astro';
+import Science from '../../components/Science.astro';
+import Responsibility from '../../components/Responsibility.astro';
+import Landmarks from '../../components/Landmarks.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
+import Faq from '../../components/Faq.astro';
 import MapEmbed from '../../components/MapEmbed.astro';
+import Sources from '../../components/Sources.astro';
 import { getI18n } from '../../i18n/ui';
 import { languagesList } from '../../i18n/ui';
+import { siteConfig } from '../../config';
 
 export function getStaticPaths() {
   return languagesList.map((lang) => ({ params: { lang } }));
 }
 
 const { messages } = getI18n(Astro.url);
+
+// FAQPage structured data — built from the localized FAQ copy so the visible
+// answers and the markup never drift apart.
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${siteConfig.baseUrl}/#faq`,
+  mainEntity: (messages.faq.items as any[]).map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: it.a,
+    },
+  })),
+};
 ---
 
 <BaseLayout title={messages.meta.title} description={messages.meta.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)}></script>
+  </Fragment>
+
   <Hero />
   <Breadcrumbs />
   <QuickFacts />
   <Intro />
+  <Weather />
+  <Itineraries />
+  <VisitorProfiles />
+  <Seasons />
+  <VisitorServices />
   <History />
+  <Heritage />
+  <Science />
+  <Responsibility />
+  <Landmarks />
   <Gallery />
   <Reviews />
+  <Faq />
   <MapEmbed />
+  <Sources />
 </BaseLayout>

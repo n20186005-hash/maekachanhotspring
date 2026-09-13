@@ -1,1 +1,19 @@
-/  /th/  302
+# Astro builds directory-format pages (`dist/th/index.html`), so the one real
+# address of every page ends in a slash. Cloudflare's default HTML handling
+# already answers `/th` with a temporary 307 hop; these rules make it a
+# permanent 301 and cover the slash-less variants Google had already indexed,
+# so the two forms consolidate onto a single URL instead of competing.
+
+/    /th/    301
+
+/th  /th/    301
+/zh  /zh/    301
+/en  /en/    301
+
+/th/transport  /th/transport/  301
+/zh/transport  /zh/transport/  301
+/en/transport  /en/transport/  301
+
+/th/legal  /th/legal/  301
+/zh/legal  /zh/legal/  301
+/en/legal  /en/legal/  301

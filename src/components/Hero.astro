@@ -1,29 +1,42 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { siteConfig } from '../config';
-import fs from 'node:fs';
-import path from 'node:path';
+import { siteConfig, attraction } from '../config';
+import photos from '../data/gallery.json';
 
 const { messages } = getI18n(Astro.url);
 const hero = messages.hero;
-const overview = messages.overview;
 
-let heroImage = '';
-try {
-  const galleryDir = path.join(process.cwd(), 'public', 'gallery');
-  const files = fs.readdirSync(galleryDir).filter(file => file.endsWith('.jpg') || file.endsWith('.png') || file.endsWith('.webp'));
-  if (files.length > 0) {
-    heroImage = `/gallery/${files[0]}`;
-  }
-} catch (e) {
-  console.error('Error reading gallery directory:', e);
-}
+// The featured photograph is the first entry of the generated gallery manifest,
+// which already carries the optimised 1600px WebP + JPEG pair and its exact
+// pixel dimensions (so the hero paints without layout shift).
+const heroPhoto = photos[0];
+const heroAlt = `${attraction.fullName} - Main view in ${attraction.city}, ${attraction.country}`;
 ---
 
 <section
+  id="attraction"
   class="hero"
-  style={`background-image: url('${heroImage}'); background-color: var(--color-nature-800);`}
+  style="background-color: var(--color-nature-800);"
+  aria-label={attraction.fullName}
 >
+  {heroPhoto ? (
+    <picture class="hero-picture">
+      <source type="image/webp" srcset={`/gallery/${heroPhoto.base}.webp`} />
+      <img
+        class="hero-bg"
+        src={`/gallery/${heroPhoto.base}.jpg`}
+        alt={heroAlt}
+        width={heroPhoto.full.width}
+        height={heroPhoto.full.height}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  ) : (
+    <img class="hero-bg" src={attraction.heroImage} alt={heroAlt} loading="eager" fetchpriority="high" decoding="async" />
+  )}
+
   <div class="hero-inner">
     <span class="hero-badge animate-fade-in-up">{hero.badge}</span>
     <h1 class="hero-title animate-fade-in-up animation-delay-100">{hero.title}</h1>

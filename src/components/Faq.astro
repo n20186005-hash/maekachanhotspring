@@ -1,0 +1,25 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const f = messages.faq;
+const items = f.items;
+---
+
+<section id="faq" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="section-title">{f.title}</h2>
+    <p class="section-subtitle">{f.subtitle}</p>
+
+    <div class="space-y-3">
+      {items.map((it: any, i: number) => (
+        <details class="card faq-item" open={i === 0}>
+          <summary class="faq-question">
+            <span>{it.q}</span>
+          </summary>
+          <p class="faq-answer">{it.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,10 +1,11 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { attraction } from '../config';
 
 const { messages } = getI18n(Astro.url);
 const o = messages.overview;
 const items = [
-  { icon: '⭐', label: o.rating, value: '4.0 / 5', sub: '11,232' },
+  { icon: '⭐', label: o.rating, value: `${attraction.ratingValue} / 5`, sub: attraction.reviewCount },
   { icon: '🏷️', label: o.category, value: o.categoryValue },
   { icon: '🕕', label: o.hours, value: o.hoursValue },
   { icon: '📍', label: o.address, value: o.addressValue },
@@ -30,5 +31,9 @@ const items = [
         </div>
       ))}
     </div>
+
+    <p class="text-center text-xs mt-6" style="color: var(--text-muted);">
+      {messages.reviews.ratingSource}
+    </p>
   </div>
 </section>

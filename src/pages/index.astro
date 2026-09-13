@@ -1,16 +1,23 @@
 ---
 import { siteConfig } from '../config';
-// Static-friendly redirect to the default language.
+
+// Safety net for the site root: `public/_redirects` sends `/` to the Thai home
+// page with a 301, so in production this document is never served. It stays as
+// a no-JavaScript fallback in case the redirect rule is ever dropped, and its
+// canonical keeps pointing at the same slash-terminated URL as every other page.
+const target = `${siteConfig.baseUrl}/th/`;
 ---
+
 <!doctype html>
 <html lang="th">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/th" />
-    <link rel="canonical" href={`${siteConfig.baseUrl}/th`} />
+    <meta http-equiv="refresh" content="0; url=/th/" />
+    <link rel="canonical" href={target} />
+    <meta name="robots" content="noindex, follow" />
     <title>Redirecting…</title>
   </head>
   <body>
-    <p>Redirecting to <a href="/th">/th</a>…</p>
+    <p>Redirecting to <a href="/th/">/th/</a>…</p>
   </body>
 </html>

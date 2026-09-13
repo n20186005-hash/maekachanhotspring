@@ -1,0 +1,50 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+
+const { lang } = getI18n(Astro.url);
+const s = getGuide(lang).seasons;
+const c = s.columns;
+---
+
+<section id="seasons" class="section-padding" style="background: var(--bg-secondary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="season-table-wrap">
+      <table class="season-table">
+        <caption class="sr-only">{s.title}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{c.season}</th>
+            <th scope="col">{c.months}</th>
+            <th scope="col">{c.weather}</th>
+            <th scope="col">{c.water}</th>
+            <th scope="col">{c.ecology}</th>
+            <th scope="col">{c.advice}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {s.rows.map((row) => (
+            <tr>
+              <th scope="row">{row.season}</th>
+              <td class="season-table-months">{row.months}</td>
+              <td>{row.weather}</td>
+              <td>{row.water}</td>
+              <td>{row.ecology}</td>
+              <td>{row.advice}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="season-alert" role="note">
+      <span class="season-alert-icon" aria-hidden="true">⚠️</span>
+      <p>{s.note}</p>
+    </div>
+
+    <p class="section-source">{s.source}</p>
+  </div>
+</section>

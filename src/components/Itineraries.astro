@@ -1,0 +1,46 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+import { siteConfig } from '../config';
+
+const { lang } = getI18n(Astro.url);
+const i = getGuide(lang).itineraries;
+---
+
+<section id="routes" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{i.title}</h2>
+    <p class="section-subtitle">{i.subtitle}</p>
+
+    <div class="route-grid">
+      {i.items.map((route) => (
+        <article class="route-card">
+          <header class="route-head">
+            <span class="route-badge">{route.badge}</span>
+            <h3 class="route-name">{route.name}</h3>
+            <p class="route-duration">⏱ {route.duration}</p>
+          </header>
+
+          <p class="route-summary">{route.summary}</p>
+
+          <ol class="route-stops">
+            {route.stops.map((stop) => (
+              <li class="route-stop">
+                <span class="route-stop-time">{stop.time}</span>
+                <span class="route-stop-text">{stop.text}</span>
+              </li>
+            ))}
+          </ol>
+
+          <p class="route-best"><strong>{route.bestFor}</strong></p>
+        </article>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <a class="btn-cta btn-cta-primary" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
+        📍 {i.title}
+      </a>
+    </div>
+  </div>
+</section>

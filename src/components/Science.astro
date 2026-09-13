@@ -1,0 +1,24 @@
+---
+import { getI18n } from '../i18n/ui';
+import { getGuide } from '../data/guide';
+
+const { lang } = getI18n(Astro.url);
+const s = getGuide(lang).science;
+---
+
+<section id="science" class="section-padding" style="background: var(--bg-tertiary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="section-title">{s.title}</h2>
+    <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="science-grid">
+      {s.blocks.map((block) => (
+        <article class="science-card">
+          <span class="science-icon" aria-hidden="true">{block.icon}</span>
+          <h3 class="science-title">{block.title}</h3>
+          <p class="science-text">{block.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

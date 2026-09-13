@@ -1,5 +1,28 @@
 export const legalData: Record<string, any> = {
   zh: {
+    imageRights: {
+      title: "图片产权声明",
+      lastUpdated: "最后更新时间：2026年9月",
+      intro: "本网站所展示的所有图片产权及版权均归原摄影者所有。",
+      sections: [
+        {
+          title: "图片使用范围",
+          content: "本站使用的一切图片，仅用于对 Mae Kachan Hot Spring（清莱温泉 / น้ำพุร้อนแม่ขะจาน）这一景点进行非营利性的信息介绍与展示，不用于任何商业用途或转售。"
+        },
+        {
+          title: "版权归属",
+          content: "所有图片的产权及版权均归原摄影者所有。本站不对任何图片主张所有权或著作权；图片中如带有原作者的署名或水印，本站均予以完整保留。"
+        },
+        {
+          title: "权利主张与删除",
+          content: "如权利人认为本站对图片的使用不妥当，请与我们联系。经核实后，我们将第一时间删除相应图片或补充正确的署名信息。"
+        },
+        {
+          title: "第三方数据",
+          content: "本站引用的 Google 地图评分、评价内容与地图数据，其使用遵循 Google 的服务条款（Google Terms of Service）。"
+        }
+      ]
+    },
     privacy: {
       title: "隐私政策",
       lastUpdated: "最后更新时间：2026年7月",
@@ -108,6 +131,29 @@ export const legalData: Record<string, any> = {
     }
   },
   en: {
+    imageRights: {
+      title: "Image Rights",
+      lastUpdated: "Last Updated: September 2026",
+      intro: "All images displayed on this website remain the property and copyright of their original photographers.",
+      sections: [
+        {
+          title: "How Images Are Used",
+          content: "Every image on this site is used solely for the non-commercial, informational presentation of Mae Kachan Hot Spring (น้ำพุร้อนแม่ขะจาน) as a visitor attraction. No image is used for advertising or resale."
+        },
+        {
+          title: "Ownership & Copyright",
+          content: "Ownership and copyright of all photographs belong to the original photographers. This website claims no ownership or copyright over any image, and any original attribution or watermark is preserved intact."
+        },
+        {
+          title: "Takedown & Attribution Requests",
+          content: "If you are a rights holder and believe an image has been used inappropriately, please contact us. After verification we will promptly remove the image or add the correct credit."
+        },
+        {
+          title: "Third-Party Data",
+          content: "Google Maps ratings, review content and map data are used in accordance with Google's Terms of Service."
+        }
+      ]
+    },
     privacy: {
       title: "Privacy Policy",
       lastUpdated: "Last Updated: July 2026",
@@ -216,6 +262,29 @@ export const legalData: Record<string, any> = {
     }
   },
   th: {
+    imageRights: {
+      title: "ลิขสิทธิ์ภาพ",
+      lastUpdated: "อัปเดตล่าสุด: กันยายน 2026",
+      intro: "ภาพทั้งหมดที่แสดงบนเว็บไซต์นี้เป็นทรัพย์สินและลิขสิทธิ์ของช่างภาพต้นฉบับ",
+      sections: [
+        {
+          title: "ขอบเขตการใช้งานภาพ",
+          content: "ภาพทุกภาพบนเว็บไซต์นี้ใช้เพื่อการนำเสนอข้อมูลสถานที่ท่องเที่ยวน้ำพุร้อนแม่ขะจาน (Mae Kachan Hot Spring) ในลักษณะที่ไม่แสวงหาผลกำไรเท่านั้น ไม่ได้ใช้เพื่อการโฆษณาหรือจำหน่ายต่อ"
+        },
+        {
+          title: "ความเป็นเจ้าของลิขสิทธิ์",
+          content: "กรรมสิทธิ์และลิขสิทธิ์ของภาพถ่ายทั้งหมดเป็นของช่างภาพต้นฉบับ เว็บไซต์นี้ไม่ได้อ้างความเป็นเจ้าของหรือลิขสิทธิ์เหนือภาพใด ๆ และยังคงรักษาชื่อผู้ถ่ายหรือลายน้ำเดิมไว้ครบถ้วน"
+        },
+        {
+          title: "การแจ้งลบและขอเครดิต",
+          content: "หากเจ้าของลิขสิทธิ์เห็นว่าการใช้ภาพไม่เหมาะสม โปรดติดต่อเรา เราจะดำเนินการลบภาพหรือเพิ่มเครดิตให้ถูกต้องโดยเร็วที่สุดหลังการตรวจสอบ"
+        },
+        {
+          title: "ข้อมูลของบุคคลที่สาม",
+          content: "คะแนนและเนื้อหารีวิวจาก Google Maps รวมถึงข้อมูลแผนที่ ใช้ตามข้อกำหนดการให้บริการของ Google"
+        }
+      ]
+    },
     privacy: {
       title: "นโยบายความเป็นส่วนตัว",
       lastUpdated: "อัปเดตล่าสุด: กรกฎาคม 2026",
