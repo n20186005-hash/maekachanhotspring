@@ -4,7 +4,6 @@ import { siteConfig, attraction } from '../config';
 
 const { messages } = getI18n(Astro.url);
 const r = messages.reviews;
-const reviews = r.reviews;
 
 function stars(n: number) {
   let out = '';
@@ -26,26 +25,19 @@ function stars(n: number) {
       <span class="text-sm" style="color: var(--text-secondary);">{r.ratingSummary}</span>
     </div>
 
-    <!-- Rating source attribution -->
-    <p class="text-center text-xs mb-8" style="color: var(--text-muted);">
+    <!-- Aggregated score from Google Maps; we intentionally do not reproduce
+         individual visitor reviews, only the verified snapshot and a link. -->
+    <p class="text-center text-xs mb-4" style="color: var(--text-muted);">
       <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:opacity-70" style="color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px;">
         {r.ratingSource}
       </a>
     </p>
 
-    <div class="grid sm:grid-cols-2 gap-4">
-      {reviews.map((rev: any) => (
-        <div class="card">
-          <div class="flex items-center justify-between mb-2">
-            <span class="font-semibold" style="color: var(--text-primary);">{rev.name}</span>
-            <span class="text-lg" set:html={stars(rev.rating)}></span>
-          </div>
-          <p class="text-sm leading-relaxed m-0" style="color: var(--text-secondary);">{rev.text}</p>
-        </div>
-      ))}
-    </div>
+    <p class="text-center text-sm max-w-2xl mx-auto mb-8" style="color: var(--text-secondary);">
+      {r.snapshotNote}
+    </p>
 
-    <div class="text-center mt-8">
+    <div class="text-center">
       <!-- MAP LINK #3 (Reviews) -->
       <a class="btn-cta btn-cta-primary" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
         📍 {r.viewLocation}

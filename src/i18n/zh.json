@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "清莱温泉 Mae Kachan Hot Spring｜清迈—清莱途中站·煮温泉蛋·足浴·照片",
-    "description": "清迈到清莱途中的天然温泉休息站。煮温泉蛋、泡足浴、看实景照片，营业时间 06:00–22:00，附交通、停车与游玩攻略。",
+    "title": "清莱温泉 Mae Kachan Hot Spring｜交通、位置与游玩攻略",
+    "description": "清莱温泉位于泰国清迈至清莱的118号公路沿线，适合旅途中停车休息。了解温泉煮蛋、足浴、地图、交通方式及游览提示。",
     "transportTitle": "清莱温泉交通指南：清迈到清莱自驾、巴士与包车"
   },
   "common": {
@@ -43,9 +43,9 @@
     "factHours": "营业时间",
     "factAdmission": "门票",
     "ratingValue": "4.0 / 5",
-    "ratingCount": "11,345 条评价",
+    "ratingCount": "11,385 条评价",
     "hoursValue": "06:00 – 22:00",
-    "admissionValue": "约 ฿40",
+    "admissionValue": "免费入园",
     "ctaMaps": "在 Google 地图上查看",
     "mapsLabel": "在 Google 地图上查看位置"
   },
@@ -59,9 +59,9 @@
     "plusCode": "Plus Code",
     "admission": "门票",
     "categoryValue": "自然保护区 / 天然温泉",
-    "addressValue": "Moo 6, Pha Soet Phatthana Village, Doi Hang, Chiang Rai 57260, Thailand",
+    "addressValue": "Moo 6, 湄皆迈, 温巴包县, 清莱府 57260, 泰国",
     "plusCodeValue": "4F76+WV Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai",
-    "admissionValue": "约 ฿40 / 人（支持非盈利生态维护）",
+    "admissionValue": "免费入园 · 增值服务约 ฿40",
     "hoursValue": "每日 06:00 – 22:00"
   },
   "history": {
@@ -90,17 +90,12 @@
     "viewLocation": "在 Google 地图上查看位置"
   },
   "reviews": {
-    "title": "访客评价",
-    "subtitle": "来自 Google 地图的真实访客反馈。",
-    "viewLocation": "在 Google 地图上查看位置",
-    "ratingSummary": "4.0 分（共 11,345 条评价）",
-    "ratingSource": "数据来源：Google 地图评分，最近同步于 2026 年 9 月。",
-    "reviews": [
-      { "name": "Somchai T.", "rating": 5, "text": "环境很棒，泡泡脚特别舒服，温泉蛋也很好吃！" },
-      { "name": "Anna K.", "rating": 4, "text": "设施稍微旧了点，但大自然的氛围无可挑剔，值得一来。" },
-      { "name": "Watchara P.", "rating": 4, "text": "早上人少很安静，蒸汽缭绕像仙境，建议早点去。" },
-      { "name": "Liu Mei", "rating": 5, "text": "自驾路过顺道来泡个脚，意外的放松，性价比高。" }
-    ]
+    "title": "访客评分",
+    "subtitle": "来自 Google 地图访客的聚合评分。",
+    "viewLocation": "在 Google 地图上查看",
+    "ratingSummary": "4.0 分 / 5（共 11,385 条评价）",
+    "ratingSource": "数据来源：Google 地图评分，最近同步于 2026 年 10 月。",
+    "snapshotNote": "本评分为同步自 Google 地图的聚合分数。查看逐条访客评价请点击下方 Google 地图条目。"
   },
   "map": {
     "title": "位置与交通：如何前往清莱府的 Mae Kachan Hot Spring",
@@ -127,7 +122,7 @@
     "items": [
       { "q": "清莱温泉（Mae Kachan Hot Spring）在哪里？", "a": "清莱温泉位于泰国清莱府温帕抛县湄皆迈区（Mae Chedi Mai, Wiang Pa Pao District），Plus Code 为 4F76+WV，坐落于清迈—清莱 118 号公路沿线。" },
       { "q": "清莱温泉需要门票吗？", "a": "公共园区免费开放，全年可入内。私人矿物浴、温泉煮蛋套装等增值服务需另行付费（约 ฿40）。" },
-      { "q": "清莱温泉的营业时间是？", "a": "清莱温泉全年每日 06:00–22:00 开放。" },
+      { "q": "清莱温泉的营业时间是？", "a": "清莱温泉通常全年每日 06:00–22:00 开放（以现场最新信息为准，营业时间可能调整，建议出行前向景区确认）。" },
       { "q": "可以在清莱温泉煮温泉蛋吗？", "a": "可以。利用天然地热泉眼煮蛋是这里的标志性体验——将竹篮盛装的鸡蛋浸入泉眼，约 15 分钟即可煮熟。" },
       { "q": "清莱温泉的水温有多高？", "a": "泉眼水温约在 80°C–90°C 之间，因此温泉池主要用于观赏、泡脚与煮蛋，不适合全身浸泡。" },
       { "q": "从清迈或清莱怎么去清莱温泉？", "a": "温泉位于 118 号公路（Route 118）沿线，自驾从清迈出发约 1.5 小时、从清莱出发约 1.5 小时，是两城之间自驾行程的热门休息站。" },
@@ -139,7 +134,7 @@
     "title": "资料来源与参考",
     "subtitle": "本站为独立信息站点，所有数据均引用可公开查证的来源，便于读者自行核实。",
     "updatedLabel": "评分与评价数据同步时间",
-    "updated": "2026 年 9 月",
+    "updated": "2026 年 10 月",
     "sourceNote": "评分与评价数量同步自 Mae Kachan Hot Spring 的 Google 地图官方条目。",
     "entriesTitle": "参考来源",
     "entries": [

@@ -37,16 +37,18 @@ export const attraction = {
   country: 'Thailand',
   countryCode: 'TH',
   postalCode: '57260',
-  streetAddress: 'Moo 6, Pha Soet Phatthana Village, Doi Hang',
+  // Unified with the Plus Code locality (Mae Chedi Mai, Wiang Pa Pao District)
+  // so the on-page address and the map pin describe the same place.
+  streetAddress: 'Moo 6, Mae Chedi Mai, Wiang Pa Pao District',
   plusCode: '4F76+WV Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai',
   latitude: 19.1138,
   longitude: 99.4613,
-  // Latest Google Maps rating snapshot.
+  // Latest Google Maps rating snapshot (synced October 2026).
   ratingValue: '4.0',
-  reviewCount: '11,345',
-  reviewCountRaw: '11345',
+  reviewCount: '11,385',
+  reviewCountRaw: '11385',
   ratingSourceName: 'Google Maps',
-  ratingUpdated: '2026-09',
+  ratingUpdated: '2026-10',
   // Primary visual asset, also used as the OG / JSON-LD image node.
   galleryImage: '/gallery/mae-kachan-hot-spring-1.jpg',
   heroImage: '/gallery/mae-kachan-hot-spring-1.jpg',

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Mae Kachan Hot Spring Chiang Rai: Eggs, Foot Bath & Photos",
-    "description": "The classic rest stop on the Chiang Mai–Chiang Rai drive. Boil eggs in the hot spring, soak your feet, and see photos, opening hours and how to get here.",
+    "title": "Mae Kachan Hot Spring (Chiang Rai) | Map, Hours & Visit Tips",
+    "description": "Visit Mae Kachan Hot Spring on the Chiang Mai–Chiang Rai route. Explore the hot spring egg-boiling area, foot baths, location map and practical travel tips.",
     "transportTitle": "Mae Kachan Hot Spring Transport: Chiang Mai to Chiang Rai Stopover"
   },
   "common": {
@@ -43,9 +43,9 @@
     "factHours": "Hours",
     "factAdmission": "Admission",
     "ratingValue": "4.0 / 5",
-    "ratingCount": "11,345 reviews",
+    "ratingCount": "11,385 reviews",
     "hoursValue": "06:00 – 22:00",
-    "admissionValue": "≈ ฿40",
+    "admissionValue": "Free entry",
     "ctaMaps": "View on Google Maps",
     "mapsLabel": "View location on Google Maps"
   },
@@ -59,9 +59,9 @@
     "plusCode": "Plus Code",
     "admission": "Admission",
     "categoryValue": "Nature Reserve / Natural Hot Spring",
-    "addressValue": "Moo 6, Pha Soet Phatthana Village, Doi Hang, Chiang Rai 57260, Thailand",
+    "addressValue": "Moo 6, Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai 57260, Thailand",
     "plusCodeValue": "4F76+WV Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai",
-    "admissionValue": "≈ ฿40 / person (Supports ecological maintenance)",
+    "admissionValue": "Free entry · optional services ≈ ฿40",
     "hoursValue": "Daily 06:00 – 22:00"
   },
   "history": {
@@ -90,17 +90,12 @@
     "viewLocation": "View location on Google Maps"
   },
   "reviews": {
-    "title": "Visitor Reviews",
-    "subtitle": "Real feedback from visitors on Google Maps.",
-    "viewLocation": "View location on Google Maps",
-    "ratingSummary": "4.0 stars (11,345 reviews)",
-    "ratingSource": "Source: Google Maps rating, last synced September 2026.",
-    "reviews": [
-      { "name": "Somchai T.", "rating": 5, "text": "Lovely setting, soaking my feet was so relaxing, and the spring eggs were delicious!" },
-      { "name": "Anna K.", "rating": 4, "text": "Facilities are a bit dated, but the natural atmosphere is impeccable — worth a visit." },
-      { "name": "Watchara P.", "rating": 4, "text": "Quiet and misty like a fairyland in the early morning; go early if you can." },
-      { "name": "Liu Mei", "rating": 5, "text": "Stopped by on a road trip to soak my feet — unexpectedly relaxing and great value." }
-    ]
+    "title": "Visitor Ratings",
+    "subtitle": "Aggregated score from Google Maps visitors.",
+    "viewLocation": "View on Google Maps",
+    "ratingSummary": "4.0 / 5 (11,385 reviews)",
+    "ratingSource": "Source: Google Maps rating, last synced October 2026.",
+    "snapshotNote": "This is an aggregate score synced from Google Maps. For individual visitor reviews, open the Google Maps listing below."
   },
   "map": {
     "title": "Location & How to Visit Mae Kachan Hot Spring in Chiang Rai",
@@ -127,7 +122,7 @@
     "items": [
       { "q": "Where is Mae Kachan Hot Spring located?", "a": "Mae Kachan Hot Spring is located in Mae Chedi Mai, Wiang Pa Pao District, Chiang Rai Province, Thailand (Plus Code 4F76+WV), on Highway 118 between Chiang Mai and Chiang Rai." },
       { "q": "Is Mae Kachan Hot Spring free to visit?", "a": "The public park area is free to enter and open year-round. Optional services such as private mineral baths or the egg-boiling sets charge a small fee (around ฿40)." },
-      { "q": "What are the opening hours of Mae Kachan Hot Spring?", "a": "Mae Kachan Hot Spring is open daily from 06:00 to 22:00, all year round." },
+      { "q": "What are the opening hours of Mae Kachan Hot Spring?", "a": "Mae Kachan Hot Spring is generally open daily from 06:00 to 22:00, all year round (per the latest on-site information; hours can change, so please confirm with the venue before your visit)." },
       { "q": "Can you boil eggs at Mae Kachan Hot Spring?", "a": "Yes. Boiling eggs in the natural geothermal vents is the signature experience here — lower a bamboo basket of eggs into the spring and they are ready in about 15 minutes." },
       { "q": "How hot is the water at Mae Kachan Hot Spring?", "a": "Vent temperatures run roughly between 80°C and 90°C, so the pools are for viewing, foot-soaking and egg-boiling rather than full-body soaking." },
       { "q": "How do I get to Mae Kachan Hot Spring from Chiang Mai or Chiang Rai?", "a": "The spring is on Highway 118 (Route 118), about 1.5 hours by car from Chiang Mai and roughly 1.5 hours from Chiang Rai. It is a popular rest stop for road trips between the two cities." },
@@ -139,7 +134,7 @@
     "title": "Sources & References",
     "subtitle": "This independent guide cites publicly verifiable sources so you can confirm every figure yourself.",
     "updatedLabel": "Rating & review data last synced",
-    "updated": "September 2026",
+    "updated": "October 2026",
     "sourceNote": "Rating and review figures are synced from the official Google Maps listing for Mae Kachan Hot Spring.",
     "entriesTitle": "Reference list",
     "entries": [

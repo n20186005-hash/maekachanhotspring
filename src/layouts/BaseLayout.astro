@@ -62,13 +62,9 @@ const jsonLd = {
       closes: '22:00',
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: attraction.ratingValue,
-    reviewCount: attraction.reviewCountRaw,
-    bestRating: '5',
-    worstRating: '1',
-  },
+  // NOTE: The Google Maps star rating is shown on-page as an aggregate snapshot
+  // but is intentionally NOT emitted as structured-data `aggregateRating`, to
+  // avoid presenting a third-party summary score as an on-site original rating.
   sameAs: attraction.sameAs,
 };
 

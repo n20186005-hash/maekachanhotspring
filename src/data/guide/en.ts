@@ -127,7 +127,7 @@ export const en: GuideContent = {
         stops: [
           { time: '0:00', text: 'Park on the developed side, use the restrooms, and pick up a site map at the visitor information point.' },
           { time: '0:15', text: 'Walk the original spring on the right-hand side as you arrive from Chiang Mai. Look for the steam plume and the pale mineral crust around the vents.' },
-          { time: '0:45', text: 'Boil an egg in the roughly 80 °C pool — about three minutes — the small ritual this place is known for.' },
+          { time: '0:45', text: 'Boil an egg in the roughly 80 °C pool — about 15 minutes — the small ritual this place is known for.' },
           { time: '1:15', text: 'Soak your feet in the designated pool for 20–30 minutes, then sit and rehydrate. Longer than that can leave you light-headed.' },
           { time: '2:00', text: 'Browse the OTOP handicraft and food shops on the developed side. Buying direct keeps the money in the community.' },
           { time: '2:45', text: 'Continue north to Chiang Rai, or turn south for Chiang Mai and Phayao.' },
