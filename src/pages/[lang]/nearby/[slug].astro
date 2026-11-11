@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {languagesList} from '../../../i18n/ui';
+import {nearbyPlaces} from '../../../data/nearbyPlaces';
+export function getStaticPaths(){return languagesList.flatMap(lang=>nearbyPlaces.map(place=>({params:{lang,slug:place.slug},props:{place}})));}
+const {lang='th'}=Astro.params;
+const {place}=Astro.props;
+const p=place[lang as 'th'|'en'|'zh'];
+const labels={
+ th:{home:'หน้าแรก',around:'แหล่งเที่ยวใกล้เคียง',about:'เกี่ยวกับสถานที่และผู้ดูแล',history:'ความเป็นมาและลักษณะพื้นที่',observe:'จุดเด่นที่ควรสังเกต',route:'เส้นทางเที่ยวตามลำดับ',transport:'วิธีเดินทาง',photos:'ภาพถ่ายสถานที่',photoMissing:'ดูภาพสถานที่จากแหล่งข้อมูลท่องเที่ยว',photoLink:'เปิดภาพและรายละเอียดต้นทาง',photoAlt:'ภาพถ่ายจริงของสถานที่',tips:'มุมถ่ายภาพ',faq:'คำถามที่พบบ่อย',maps:'นำทางด้วย Google Maps',source:'แหล่งข้อมูลที่ใช้อ้างอิง',back:'ดูสถานที่ใกล้เคียงทั้งหมด'},
+ en:{home:'Home',around:'Nearby attractions',about:'About the place and its management',history:'Background and site character',observe:'What to look for',route:'Suggested visitor route',transport:'Getting there',photos:'Photographs of the place',photoMissing:'See place-specific photographs at the tourism source',photoLink:'View the original photo and details',photoAlt:'Documented photograph of the destination',tips:'Photography viewpoints',faq:'Frequently asked questions',maps:'Open this place in Google Maps',source:'Research sources',back:'Explore all nearby places'},
+ zh:{home:'首页',around:'周边景点',about:'关于景点与管理主体',history:'历史背景与景观特色',observe:'重点观察内容',route:'建议游览路线',transport:'交通方式',photos:'景点实景照片',photoMissing:'前往旅游资料来源查看该景点照片',photoLink:'查看原始照片与说明',photoAlt:'对应景点实景照片',tips:'摄影机位',faq:'常见问答',maps:'在 Google 地图导航到此景点',source:'参考资料',back:'查看全部周边景点'}
+}[lang as 'th'|'en'|'zh'];
+const maps=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.query)}`;
+const schema={'@context':'https://schema.org','@type':'TouristAttraction',name:p.name,description:p.about,url:Astro.url.href,inLanguage:lang,hasMap:maps};
+---
+<BaseLayout title={`${p.name} | Mae Kachan Hot Spring`} description={p.about} path={`nearby/${place.slug}`}>
+ <Fragment slot="head"><script type="application/ld+json" is:inline set:html={JSON.stringify(schema)}/></Fragment>
+ <section class="hero" style="background-color:var(--color-nature-800);min-height:38vh;display:flex;align-items:center"><div class="hero-inner"><h1 class="hero-title">{p.name}</h1><p class="hero-subtitle">{p.tag}</p><a class="inline-block mt-5 rounded-xl bg-white text-primary px-5 py-3 font-semibold" href={maps} target="_blank" rel="noopener noreferrer">{labels.maps} ↗</a></div></section>
+ <article class="max-w-4xl mx-auto px-4 py-12 space-y-11 text-color leading-relaxed">
+  <nav class="text-sm flex flex-wrap gap-2"><a href={`/${lang}/`} class="text-primary underline">{labels.home}</a><span>/</span><a href={`/${lang}/guides/nearby-attractions/`} class="text-primary underline">{labels.around}</a><span>/ {p.name}</span></nav>
+  <section><p class="text-lg">{p.about}</p></section>
+  <section class="bg-surface border border-border rounded-2xl p-7"><h2 class="text-2xl font-bold text-primary mb-4">{labels.about}</h2><p>{p.management}</p></section>
+  <section><h2 class="text-2xl font-bold text-primary mb-4">{labels.history}</h2><p>{p.history}</p></section>
+  <section><h2 class="text-2xl font-bold text-primary mb-4">{labels.observe}</h2><p>{p.observe}</p></section>
+  <section><h2 class="text-2xl font-bold text-primary mb-4">{labels.photos}</h2>{place.image ? <figure class="overflow-hidden rounded-2xl border border-border bg-surface"><img src={place.image} alt={`${labels.photoAlt}: ${p.name}`} loading="lazy" class="w-full aspect-[16/9] object-cover"/><figcaption class="p-4 text-sm text-secondary"><a class="text-primary underline" href={place.imageSource} target="_blank" rel="noopener noreferrer">{labels.photoLink} ↗</a></figcaption></figure> : <a href={place.imageSource} target="_blank" rel="noopener noreferrer" class="block p-6 rounded-2xl border border-border bg-surface text-primary underline">{labels.photoMissing} ↗</a>}</section>
+  <section><h2 class="text-2xl font-bold text-primary mb-4">{labels.route}</h2><ol class="space-y-4"><li class="flex gap-3"><span class="text-primary font-bold">01</span><p>{p.transport}</p></li><li class="flex gap-3"><span class="text-primary font-bold">02</span><p>{p.route}</p></li><li class="flex gap-3"><span class="text-primary font-bold">03</span><p>{p.photo}</p></li></ol></section>
+  <section class="grid md:grid-cols-2 gap-5"><div class="bg-surface p-6 rounded-xl border border-border"><h2 class="text-xl font-bold text-primary mb-3">{labels.transport}</h2><p>{p.transport}</p></div><div class="bg-surface p-6 rounded-xl border border-border"><h2 class="text-xl font-bold text-primary mb-3">{labels.tips}</h2><p>{p.photo}</p></div></section>
+  <section><h2 class="text-2xl font-bold text-primary mb-5">{labels.faq}</h2><dl class="space-y-5">{p.faq.map((item: readonly [string,string])=><div class="border-b border-border pb-4"><dt class="font-bold text-lg">{item[0]}</dt><dd class="mt-2">{item[1]}</dd></div>)}</dl></section>
+  <section class="rounded-2xl bg-surface border border-border p-7"><a class="inline-block rounded-xl bg-primary text-white px-5 py-3 font-semibold" href={maps} target="_blank" rel="noopener noreferrer">{labels.maps} ↗</a><h2 class="font-bold mt-6 mb-2">{labels.source}</h2><a href={place.source} class="text-primary underline break-all" target="_blank" rel="noopener noreferrer">{place.source}</a><p class="mt-4"><a href={`/${lang}/guides/nearby-attractions/`} class="text-primary underline">← {labels.back}</a></p></section>
+ </article>
+</BaseLayout>
