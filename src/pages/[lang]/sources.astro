@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sources from '../../components/Sources.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages } = getI18n(Astro.url);
+const s = messages.sources;
+---
+
+<BaseLayout title={`${s.title} | ${messages.meta.title}`} description={s.subtitle} path="sources">
+  <div class="max-w-4xl mx-auto px-4 pt-8">
+    <nav aria-label="Breadcrumb" class="text-sm" style="color: var(--text-secondary);">
+      <a href={`/${lang}/`} class="hover:underline">{messages.footer.home}</a>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">{s.title}</span>
+    </nav>
+  </div>
+  <Sources />
+</BaseLayout>
