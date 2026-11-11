@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getI18n, languagesList } from '../../i18n/ui';
 import { transportData } from '../../data/transport';
+import { siteConfig } from '../../config';
 
 export function getStaticPaths() {
   return languagesList.map((lang) => ({ params: { lang } }));
@@ -291,7 +292,7 @@ const pageTitle = messages.meta.transportTitle || `${data.hero.title} | ${messag
       <h2 class="text-2xl font-bold mb-8 text-primary">{data.resources.title}</h2>
       <div class="flex flex-wrap justify-center gap-4">
         {data.resources.items.map((item: any) => (
-          <a href="#" class="inline-flex items-center gap-3 bg-surface hover:bg-primary hover:text-white transition-colors p-4 rounded-xl border border-border group">
+          <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-surface hover:bg-primary hover:text-white transition-colors p-4 rounded-xl border border-border group">
             <span class="text-2xl group-hover:scale-110 transition-transform">{item.icon}</span>
             <div class="text-left">
               <div class="font-bold text-sm">{item.title}</div>

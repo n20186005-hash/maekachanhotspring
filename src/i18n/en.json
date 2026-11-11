@@ -7,7 +7,13 @@
   "common": {
     "changeLanguage": "Change language",
     "toggleTheme": "Toggle dark mode",
-    "googleMaps": "Google Maps"
+    "googleMaps": "Google Maps",
+    "breadcrumbLabel": "Breadcrumb navigation",
+    "menuToggle": "Toggle navigation menu",
+    "galleryPhoto": "Photo",
+    "galleryClose": "Close photo viewer",
+    "galleryPrevious": "Previous photo",
+    "galleryNext": "Next photo"
   },
   "header": {
     "siteName": "Mae Kachan Hot Spring",

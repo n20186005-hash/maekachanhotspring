@@ -1,6 +1,6 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { siteConfig, attraction } from '../config';
+import { siteConfig } from '../config';
 import photos from '../data/gallery.json';
 
 const { messages } = getI18n(Astro.url);
@@ -10,7 +10,7 @@ const g = messages.gallery;
 // 1600px WebP + JPEG master for the lightbox. Dimensions come from the
 // generated manifest so the browser can reserve the right box straight away.
 const photoAlt = (i: number) =>
-  `${attraction.fullName} in ${attraction.city}, ${attraction.country} — photo ${i + 1}`;
+  `${g.title} — ${messages.common.galleryPhoto} ${i + 1}`;
 
 // 1x1 transparent GIF used until the lightbox opens, so no request is made for
 // an empty `src`.
@@ -58,8 +58,8 @@ const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABA
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
-  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label={messages.common.galleryClose}>×</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label={messages.common.galleryPrevious}>‹</button>
   <figure class="lightbox-figure">
     <picture>
       <source id="lightbox-webp" type="image/webp" />
@@ -67,7 +67,7 @@ const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABA
     </picture>
     <figcaption id="lightbox-caption">{g.title}</figcaption>
   </figure>
-  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+  <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label={messages.common.galleryNext}>›</button>
 </div>
 
 <script is:inline>

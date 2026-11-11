@@ -3,14 +3,14 @@ import { getI18n } from '../i18n/ui';
 import { siteConfig, attraction } from '../config';
 import photos from '../data/gallery.json';
 
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const hero = messages.hero;
 
 // The featured photograph is the first entry of the generated gallery manifest,
 // which already carries the optimised 1600px WebP + JPEG pair and its exact
 // pixel dimensions (so the hero paints without layout shift).
 const heroPhoto = photos[0];
-const heroAlt = `${attraction.fullName} - Main view in ${attraction.city}, ${attraction.country}`;
+const heroAlt = lang === 'zh' ? '清莱温泉 Mae Kachan Hot Spring 实景' : lang === 'th' ? 'ภาพน้ำพุร้อนแม่ขะจาน จังหวัดเชียงราย' : 'Mae Kachan Hot Spring in Chiang Rai, Thailand';
 ---
 
 <section

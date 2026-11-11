@@ -7,7 +7,13 @@
   "common": {
     "changeLanguage": "切换语言",
     "toggleTheme": "切换深色模式",
-    "googleMaps": "Google Maps"
+    "googleMaps": "Google Maps",
+    "breadcrumbLabel": "页面路径导航",
+    "menuToggle": "展开或收起导航菜单",
+    "galleryPhoto": "照片",
+    "galleryClose": "关闭照片查看器",
+    "galleryPrevious": "上一张照片",
+    "galleryNext": "下一张照片"
   },
   "header": {
     "siteName": "清莱温泉",

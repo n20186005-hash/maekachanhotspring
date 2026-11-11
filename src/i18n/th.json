@@ -7,7 +7,13 @@
   "common": {
     "changeLanguage": "เปลี่ยนภาษา",
     "toggleTheme": "สลับโหมดมืด",
-    "googleMaps": "Google Maps"
+    "googleMaps": "Google Maps",
+    "breadcrumbLabel": "เส้นทางนำทางหน้าเว็บ",
+    "menuToggle": "เปิดหรือปิดเมนูนำทาง",
+    "galleryPhoto": "ภาพถ่าย",
+    "galleryClose": "ปิดตัวดูภาพ",
+    "galleryPrevious": "ภาพก่อนหน้า",
+    "galleryNext": "ภาพถัดไป"
   },
   "header": {
     "siteName": "น้ำพุร้อนแม่ขะจาน",
