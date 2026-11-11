@@ -7,6 +7,7 @@ const f = messages.footer;
 
 const navLinks = [
   { href: `/${lang}/`, label: f.home },
+  { href: `/${lang}/guides/`, label: lang === 'th' ? 'คู่มือท่องเที่ยว' : lang === 'zh' ? '游览指南' : 'Visitor guides' },
   { href: `/${lang}/transport/`, label: f.transport },
   { href: `/${lang}/#overview`, label: f.visit },
   { href: `/${lang}/#gallery`, label: f.gallery },

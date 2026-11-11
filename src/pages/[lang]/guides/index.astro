@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { languagesList, getI18n } from '../../../i18n/ui';
+import { topics } from '../../../data/topics';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
+const { lang } = getI18n(Astro.url);
+const locale = lang === 'th' ? 2 : lang === 'zh' ? 3 : 1;
+const title = lang === 'th' ? 'คู่มือเที่ยวน้ำพุร้อนแม่ขะจาน' : lang === 'zh' ? '湄卡占温泉实用指南' : 'Mae Kachan Hot Spring visitor guides';
+const intro = lang === 'th' ? 'วางแผนการเดินทางจากเชียงใหม่ถึงเชียงราย รวมการเดินทาง ค่าบริการ ความปลอดภัย และกิจกรรมที่น้ำพุร้อน' : lang === 'zh' ? '从清迈到清莱的顺路温泉停靠指南：交通、费用、安全、体验及季节建议。' : 'Plan your Chiang Mai–Chiang Rai stop: road access, prices, safety, activities and seasonal tips.';
+---
+<BaseLayout title={`${title} | Mae Kachan`} description={intro} path="guides">
+  <section class="hero" style="background-color:var(--color-nature-800);min-height:32vh;display:flex;align-items:center"><div class="hero-inner"><h1 class="hero-title">{title}</h1><p class="hero-subtitle">{intro}</p></div></section>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <a class="text-primary underline" href={`/${lang}/`}>{lang === 'th' ? 'หน้าแรก' : lang === 'zh' ? '首页' : 'Home'}</a>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+      {topics.map(topic => <a class="bg-surface rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow" href={`/${lang}/guides/${topic[0]}/`}><h2 class="text-xl font-bold text-primary mb-3">{topic[locale]}</h2><p class="text-secondary text-sm leading-relaxed">{topic[locale + 3]}</p></a>)}
+    </div>
+  </div>
+</BaseLayout>
