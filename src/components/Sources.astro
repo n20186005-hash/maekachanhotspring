@@ -4,6 +4,7 @@ import { attraction, siteConfig } from '../config';
 
 const { messages } = getI18n(Astro.url);
 const s = messages.sources;
+const f = messages.footer;
 const entries = s.entries;
 ---
 
@@ -11,6 +12,11 @@ const entries = s.entries;
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="section-title">{s.title}</h2>
     <p class="section-subtitle">{s.subtitle}</p>
+
+    <div class="card mb-6">
+      <p class="font-semibold leading-relaxed mb-3" style="color: var(--text-primary);">{f.disclaimer}</p>
+      <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{f.dataSource}</p>
+    </div>
 
     <div class="card mb-6">
       <div class="flex flex-wrap items-center justify-between gap-2">
